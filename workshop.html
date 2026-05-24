@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Workshop | ALOHA</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Literata:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500&family=DM+Serif+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#F5EAD0",
+                        primary: "#3D1A00",
+                        "primary-container": "#F5EAD0",
+                        secondary: "#8B3A00",
+                        "on-surface": "#2A2522",
+                        "on-surface-variant": "#584D46",
+                        "surface-container": "#F8EDD3",
+                        "outline-variant": "#D0C4BB",
+                    },
+                    fontFamily: {
+                        "display-lg": ['"Libre Caslon Text"', "serif"],
+                        "section-title": ['"Literata"', "serif"],
+                        "body-main": ['"DM Sans"', "sans-serif"],
+                        "jost": ['"Jost"', "sans-serif"],
+                        "dm-serif": ['"DM Serif Text"', "serif"],
+                    },
+                    spacing: {
+                        "margin-desktop": "10vw",
+                        "margin-mobile": "24px",
+                        "section-padding-v": "120px",
+                        "gutter": "2rem",
+                    },
+                    maxWidth: {
+                        "container-max": "1440px",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+        .form-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #3D1A00;
+            padding: 16px 0;
+            font-family: 'Jost', sans-serif;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            color: #3D1A00;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-input:focus {
+            border-bottom: 2px solid #8B3A00;
+            outline: none;
+            box-shadow: none;
+        }
+        .form-input::placeholder {
+            color: #584D46;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body class="bg-[#F5EAD0] text-on-surface antialiased flex flex-col min-h-screen">
+    <nav class="fixed top-0 left-0 w-full z-50 flex flex-col pt-8 pb-4 px-margin-mobile md:px-margin-desktop bg-[#F5EAD0]/90 backdrop-blur-sm transition-all duration-700 border-b border-outline-variant/30" id="main-nav">
+        <div class="max-w-container-max w-full mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex-shrink-0 flex items-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px]">
+                <img src="logo.png" alt="ALOHA" class="w-full h-full object-contain transition-all duration-700" id="nav-logo" />
+            </a>
+            <div class="hidden md:flex items-center gap-10 font-jost text-[12px] uppercase tracking-widest">
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="story.html">STORY</a>
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="index.html">CRAFT PROCESS</a>
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="artisans.html">ARTISANS</a>
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="collection.html">COLLECTION</a>
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="impact.html">IMPACT</a>
+                <a class="text-secondary border-b border-secondary transition-colors duration-300" href="connect.html">CONTACT</a>
+                
+                <div class="relative group">
+                    <a href="#" class="text-on-surface hover:text-secondary transition-colors duration-300 flex items-center">
+                        <span class="material-symbols-outlined text-[24px]">account_circle</span>
+                    </a>
+                    <div class="absolute right-0 top-full mt-4 w-48 bg-surface-container border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-lg">
+                        <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface border-b border-outline-variant/50">LOGIN</a>
+                        <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface border-b border-outline-variant/50">MY ACCOUNT</a>
+                        <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface">ORDERS</a>
+                    </div>
+                </div>
+                <a href="cart.html" class="text-on-surface hover:text-secondary transition-colors duration-300 flex items-center relative">
+                    <span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+                    <span class="absolute -top-1 -right-2 bg-secondary text-background text-[8px] w-4 h-4 rounded-full flex items-center justify-center font-bold">1</span>
+                </a>
+            </div>
+            <div class="md:hidden flex items-center gap-4">
+                <a href="cart.html" class="text-on-surface"><span class="material-symbols-outlined">shopping_bag</span></a>
+                <span class="material-symbols-outlined text-3xl text-on-surface nav-mobile-icon">menu</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-[160px] md:pt-[200px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full mb-section-padding-v flex items-center justify-center">
+        <div class="w-full max-w-md">
+            <h1 class="font-display-lg text-[40px] md:text-[56px] text-primary mb-12 text-center" style="font-family: 'Libre Caslon Text', serif;">Workshop.</h1>
+            
+            <form action="#" class="space-y-8">
+                <div><input type="text" placeholder="NAME" class="form-input" required></div>
+                <div><input type="email" placeholder="EMAIL" class="form-input" required></div>
+                <div><input type="text" placeholder="PREFERRED DATE" class="form-input" required></div>
+                <div><input type="text" placeholder="SKILL LEVEL" class="form-input" required></div>
+                
+                <div class="pt-8 text-center">
+                    <button type="submit" class="inline-flex items-center justify-center w-16 h-16 rounded-full border border-primary text-primary hover:bg-primary hover:text-background transition-colors duration-500">
+                        <span class="material-symbols-outlined font-light">arrow_forward</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
+

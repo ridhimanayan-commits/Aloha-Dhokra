@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
@@ -170,19 +170,34 @@
     <div class="max-w-container-max w-full mx-auto flex items-center justify-between">
         <!-- Logo Left -->
         <a href="index.html" class="flex-shrink-0 flex items-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px]">
-            <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-top transition-all duration-700" id="nav-logo" />
+            <img src="logo.png" alt="ALOHA" class="w-full h-full object-contain transition-all duration-700" id="nav-logo" />
         </a>
         <!-- Links Right -->
         <div class="hidden md:flex items-center gap-10 font-label-ui text-label-ui uppercase tracking-widest">
             <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="story.html">STORY</a>
-            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="index.html#process">CRAFT PROCESS</a>
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="index.html">CRAFT PROCESS</a>
             <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="artisans.html">ARTISANS</a>
             <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="collection.html">COLLECTION</a>
             <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="impact.html">IMPACT</a>
             <a class="text-secondary border-b border-secondary transition-colors duration-300 interactive-link nav-link-text" href="connect.html">CONTACT</a>
+            <div class="relative group">
+                <a href="#" class="text-on-surface hover:text-secondary transition-colors duration-300 flex items-center nav-link-text">
+                    <span class="material-symbols-outlined text-[24px]">account_circle</span>
+                </a>
+                <div class="absolute right-0 top-full mt-4 w-48 bg-surface-container border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-lg">
+                    <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface border-b border-outline-variant/50">LOGIN</a>
+                    <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface border-b border-outline-variant/50">MY ACCOUNT</a>
+                    <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface">ORDERS</a>
+                </div>
+            </div>
+            <a href="cart.html" class="text-on-surface hover:text-secondary transition-colors duration-300 flex items-center relative nav-link-text">
+                <span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+                <span class="absolute -top-1 -right-2 bg-secondary text-background text-[8px] w-4 h-4 rounded-full flex items-center justify-center font-bold">1</span>
+            </a>
         </div>
         <!-- Mobile Menu Placeholder -->
-        <div class="md:hidden">
+        <div class="md:hidden flex items-center gap-4">
+            <a href="cart.html" class="text-on-surface nav-mobile-icon transition-colors duration-700"><span class="material-symbols-outlined text-[24px]">shopping_bag</span></a>
             <span class="material-symbols-outlined text-3xl text-on-surface nav-mobile-icon transition-colors duration-700">menu</span>
         </div>
     </div>
@@ -197,22 +212,22 @@
 </div>
 <!-- Intro Text -->
 <p class="font-serif-heading text-[18px] text-center text-primary leading-relaxed mb-20 max-w-[600px] mx-auto">
-            "Whether you wish to commission a piece, partner with our artisans, book a workshop, or simply learn more — we welcome your words as warmly as a Dhokra mould welcomes its metal."
+            "Whether you wish to commission a piece, partner with our artisans, book a workshop, or simply learn more â€” we welcome your words as warmly as a Dhokra mould welcomes its metal."
         </p>
 <!-- Contact Reason Grid -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-24">
-<div class="flex items-center justify-center h-20 border border-divider-tan cursor-pointer transition-colors duration-500 hover:bg-[#EEDDCC]">
+<a href="commission.html" class="flex items-center justify-center h-20 border border-divider-tan cursor-pointer transition-colors duration-500 hover:bg-[#EEDDCC] block">
 <span class="font-serif-editorial italic text-[20px] text-primary">Commission a piece</span>
-</div>
-<div class="flex items-center justify-center h-20 border border-divider-tan cursor-pointer transition-colors duration-500 hover:bg-[#EEDDCC]">
+</a>
+<a href="visit.html" class="flex items-center justify-center h-20 border border-divider-tan cursor-pointer transition-colors duration-500 hover:bg-[#EEDDCC] block">
 <span class="font-serif-editorial italic text-[20px] text-primary">Visit an artisan village</span>
-</div>
-<div class="flex items-center justify-center h-20 border border-divider-tan cursor-pointer transition-colors duration-500 hover:bg-[#EEDDCC]">
+</a>
+<a href="workshop.html" class="flex items-center justify-center h-20 border border-divider-tan cursor-pointer transition-colors duration-500 hover:bg-[#EEDDCC] block">
 <span class="font-serif-editorial italic text-[20px] text-primary">Book a workshop</span>
-</div>
-<div class="flex items-center justify-center h-20 border border-divider-tan cursor-pointer transition-colors duration-500 hover:bg-[#EEDDCC]">
+</a>
+<a href="press.html" class="flex items-center justify-center h-20 border border-divider-tan cursor-pointer transition-colors duration-500 hover:bg-[#EEDDCC] block">
 <span class="font-serif-editorial italic text-[20px] text-primary">Press &amp; research enquiries</span>
-</div>
+</a>
 </div>
 <!-- Contact Form -->
 <form class="space-y-12 mb-20">
@@ -233,7 +248,7 @@
 <label for="message">Your message</label>
 </div>
 <button class="w-full py-5 border border-primary text-primary font-button-text text-button-text hover:bg-primary hover:text-background transition-all duration-300" type="submit">
-                SEND YOUR MESSAGE →
+                SEND YOUR MESSAGE â†’
             </button>
 </form>
 <!-- Social Details -->
@@ -283,7 +298,7 @@
                 <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-top" />
             </div>
             <p class="font-jost text-[12px] tracking-[0.1em] text-on-surface-variant/70 text-center md:text-left">
-                © 2024 ALOHA HERITAGE. PRESERVING THE DHOKRA LEGACY.<br/>
+                Â© 2024 ALOHA HERITAGE. PRESERVING THE DHOKRA LEGACY.<br/>
                 <span class="italic font-body-main text-[16px] tracking-normal">Made in Odisha. Present everywhere.</span>
             </p>
             <div class="flex gap-6 mt-8 md:mt-0 font-jost text-[12px] tracking-[0.1em] uppercase">
@@ -329,3 +344,4 @@
         });
     </script>
 </body></html>
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
@@ -131,19 +131,34 @@
     <div class="max-w-container-max w-full mx-auto flex items-center justify-between">
         <!-- Logo Left -->
         <a href="index.html" class="flex-shrink-0 flex items-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px]">
-            <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-top transition-all duration-700" id="nav-logo" />
+            <img src="logo.png" alt="ALOHA" class="w-full h-full object-contain transition-all duration-700" id="nav-logo" />
         </a>
         <!-- Links Right -->
         <div class="hidden md:flex items-center gap-10 font-label-ui text-label-ui uppercase tracking-widest">
             <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="story.html">STORY</a>
-            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="index.html#process">CRAFT PROCESS</a>
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="index.html">CRAFT PROCESS</a>
             <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="artisans.html">ARTISANS</a>
             <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="collection.html">COLLECTION</a>
             <a class="text-secondary border-b border-secondary transition-colors duration-300 interactive-link nav-link-text" href="impact.html">IMPACT</a>
             <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="connect.html">CONTACT</a>
+            <div class="relative group">
+                <a href="#" class="text-on-surface hover:text-secondary transition-colors duration-300 flex items-center nav-link-text">
+                    <span class="material-symbols-outlined text-[24px]">account_circle</span>
+                </a>
+                <div class="absolute right-0 top-full mt-4 w-48 bg-surface-container border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-lg">
+                    <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface border-b border-outline-variant/50">LOGIN</a>
+                    <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface border-b border-outline-variant/50">MY ACCOUNT</a>
+                    <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface">ORDERS</a>
+                </div>
+            </div>
+            <a href="cart.html" class="text-on-surface hover:text-secondary transition-colors duration-300 flex items-center relative nav-link-text">
+                <span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+                <span class="absolute -top-1 -right-2 bg-secondary text-background text-[8px] w-4 h-4 rounded-full flex items-center justify-center font-bold">1</span>
+            </a>
         </div>
         <!-- Mobile Menu Placeholder -->
-        <div class="md:hidden">
+        <div class="md:hidden flex items-center gap-4">
+            <a href="cart.html" class="text-on-surface nav-mobile-icon transition-colors duration-700"><span class="material-symbols-outlined text-[24px]">shopping_bag</span></a>
             <span class="material-symbols-outlined text-3xl text-on-surface nav-mobile-icon transition-colors duration-700">menu</span>
         </div>
     </div>
@@ -173,7 +188,7 @@
 <!-- LIVE IMPACT TRACKER -->
 <section class="py-section-padding-v bg-surface-container-low relative">
 <div class="max-w-container-max mx-auto px-margin-desktop">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter text-center items-end">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter text-center items-baseline">
 <div class="space-y-4">
 <div class="cormorant font-extralight text-[96px] text-[#C4621A] leading-none">
 <span class="counter" data-target="47">0</span>
@@ -194,7 +209,7 @@
 </div>
 <div class="space-y-4">
 <div class="cormorant font-extralight text-[64px] text-[#C4621A] leading-none">
-                            ₹<span class="counter" data-target="3840000">0</span>
+                            â‚¹<span class="counter" data-target="3840000">0</span>
 </div>
 <p class="jost uppercase text-[12px] tracking-[0.2em] text-[#D4B896]">Paid to Artisans</p>
 </div>
@@ -220,7 +235,7 @@
 <div class="space-y-8 border-l border-outline-variant pl-8 pt-4">
 <span class="font-label-ui text-label-ui text-secondary">03 ARCHIVE</span>
 <p class="font-body-main text-body-main text-on-surface leading-relaxed">
-                            We are building a permanent digital archive of Dhokra oral histories, motif libraries, and process documentation — free and open to researchers.
+                            We are building a permanent digital archive of Dhokra oral histories, motif libraries, and process documentation â€” free and open to researchers.
                         </p>
 </div>
 </div>
@@ -381,7 +396,7 @@
                 <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-top" />
             </div>
             <p class="font-jost text-[12px] tracking-[0.1em] text-on-surface-variant/70 text-center md:text-left">
-                © 2024 ALOHA HERITAGE. PRESERVING THE DHOKRA LEGACY.<br/>
+                Â© 2024 ALOHA HERITAGE. PRESERVING THE DHOKRA LEGACY.<br/>
                 <span class="italic font-body-main text-[16px] tracking-normal">Made in Odisha. Present everywhere.</span>
             </p>
             <div class="flex gap-6 mt-8 md:mt-0 font-jost text-[12px] tracking-[0.1em] uppercase">
@@ -442,3 +457,4 @@
         });
     </script>
 </body></html>
+

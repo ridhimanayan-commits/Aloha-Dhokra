@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bronze Minnow | ALOHA</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Literata:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500&family=DM+Serif+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#FDF6EC",
+                        primary: "#3D1A00",
+                        "primary-container": "#F5EAD0",
+                        secondary: "#8B3A00",
+                        "on-surface": "#2A2522",
+                        "on-surface-variant": "#584D46",
+                        "surface-container": "#F8EDD3",
+                        "outline-variant": "#D0C4BB",
+                    },
+                    fontFamily: {
+                        "display-lg": ['"Libre Caslon Text"', "serif"],
+                        "section-title": ['"Literata"', "serif"],
+                        "body-main": ['"DM Sans"', "sans-serif"],
+                        "jost": ['"Jost"', "sans-serif"],
+                        "dm-serif": ['"DM Serif Text"', "serif"],
+                    },
+                    spacing: {
+                        "margin-desktop": "10vw",
+                        "margin-mobile": "24px",
+                        "section-padding-v": "120px",
+                        "gutter": "2rem",
+                    },
+                    maxWidth: {
+                        "container-max": "1440px",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+        .product-gallery-img { mix-blend-mode: multiply; }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 left-0 w-full z-50 flex flex-col pt-8 pb-4 px-margin-mobile md:px-margin-desktop bg-background/90 backdrop-blur-sm transition-all duration-700 border-b border-outline-variant/30" id="main-nav">
+        <div class="max-w-container-max w-full mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex-shrink-0 flex items-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px]">
+                <img src="logo.png" alt="ALOHA" class="w-full h-full object-contain transition-all duration-700" id="nav-logo" />
+            </a>
+            <div class="hidden md:flex items-center gap-10 font-jost text-[12px] uppercase tracking-widest">
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="story.html">STORY</a>
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="index.html">CRAFT PROCESS</a>
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="artisans.html">ARTISANS</a>
+                <a class="text-secondary border-b border-secondary transition-colors duration-300" href="collection.html">COLLECTION</a>
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="impact.html">IMPACT</a>
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="connect.html">CONTACT</a>
+                
+                <!-- Profile Icon with Dropdown -->
+                <div class="relative group">
+                    <a href="#" class="text-on-surface hover:text-secondary transition-colors duration-300 flex items-center">
+                        <span class="material-symbols-outlined text-[24px]">account_circle</span>
+                    </a>
+                    <div class="absolute right-0 top-full mt-4 w-48 bg-surface-container border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-lg">
+                        <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface border-b border-outline-variant/50">LOGIN</a>
+                        <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface border-b border-outline-variant/50">MY ACCOUNT</a>
+                        <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface">ORDERS</a>
+                    </div>
+                </div>
+                <!-- Cart Icon -->
+                <a href="cart.html" class="text-on-surface hover:text-secondary transition-colors duration-300 flex items-center relative">
+                    <span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+                    <span class="absolute -top-1 -right-2 bg-secondary text-background text-[8px] w-4 h-4 rounded-full flex items-center justify-center font-bold">1</span>
+                </a>
+            </div>
+            <div class="md:hidden flex items-center gap-4">
+                <a href="cart.html" class="text-on-surface"><span class="material-symbols-outlined">shopping_bag</span></a>
+                <span class="material-symbols-outlined text-3xl text-on-surface nav-mobile-icon">menu</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-[140px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-section-padding-v">
+        <!-- Breadcrumb -->
+        <div class="font-jost text-[10px] tracking-[0.2em] text-on-surface-variant mb-12 uppercase">
+            <a href="index.html" class="hover:text-secondary">Home</a> <span class="mx-2">/</span>
+            <a href="collection.html" class="hover:text-secondary">Collection</a> <span class="mx-2">/</span>
+            <span class="text-primary">The Bronze Minnow</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+            <!-- Image Gallery -->
+            <div class="bg-surface-container aspect-square flex items-center justify-center p-8 relative">
+                <img src="https://lh3.googleusercontent.com/aida/ADBb0uiwgtbLB74L56E5I3yOJK9UuDLo8_v2rCtGecnxQllzTRrxAnqdijQ_2ZkasoE6ipG-ltfHoF-9kb95dTX9F3eWS9Fgxz13YSqZCRQ1xcnVO6oUXzdJVosSRRLXP7dYrN4KOw4Xrkr25aUsypL4jzAHpr3BHU_1BwEaZAbCQyc1S8kpjO2zsPoF3Ss4MJ6pO8sVGzSyJizubnqwq-732GGuGLjxTS0g7HNHmB2lEs07Ewv6aZtzmPmtyp-9" alt="The Bronze Minnow" class="w-full h-full object-contain product-gallery-img">
+                <img src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6" alt="Authenticity Badge" class="absolute bottom-6 right-6 w-16 h-16 opacity-80">
+            </div>
+
+            <!-- Product Info -->
+            <div class="flex flex-col justify-center">
+                <p class="font-jost text-[10px] tracking-[0.3em] text-secondary mb-4 uppercase">By Lakhan Bagli Â· Sadeibareni</p>
+                <h1 class="font-display-lg text-[48px] text-primary mb-2 leading-tight">The Bronze Minnow</h1>
+                <p class="font-dm-serif text-[18px] text-on-surface-variant italic mb-6">Handcast brass Â· Tribal fish motif</p>
+                
+                <div class="text-[24px] font-jost text-primary mb-8 font-light">
+                    â‚¹ 3,800
+                </div>
+
+                <p class="font-body-main text-[16px] text-on-surface-variant leading-relaxed mb-10 max-w-lg">
+                    Cast using the 4000-year-old lost-wax technique, this tribal fish motif symbolizes fertility and abundance in the indigenous lore of Odisha. The intricate wirework detailing on the scales is achieved by carefully wrapping fine beeswax threads over a clay core before casting. Every irregularity is a hallmark of its singular creation.
+                </p>
+
+                <div class="border-t border-b border-outline-variant py-6 mb-10 space-y-4">
+                    <div class="flex justify-between font-jost text-[12px] tracking-wider text-on-surface-variant">
+                        <span>DIMENSIONS</span>
+                        <span>4.5" W x 2.8" H</span>
+                    </div>
+                    <div class="flex justify-between font-jost text-[12px] tracking-wider text-on-surface-variant">
+                        <span>MATERIAL</span>
+                        <span>Scrap Brass & Bronze Alloy</span>
+                    </div>
+                    <div class="flex justify-between font-jost text-[12px] tracking-wider text-on-surface-variant">
+                        <span>LEAD TIME</span>
+                        <span>Ships in 2-3 business days</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center border border-outline-variant">
+                        <button class="px-4 py-3 text-on-surface-variant hover:text-secondary transition-colors" onclick="document.getElementById('qty').value = Math.max(1, parseInt(document.getElementById('qty').value) - 1)">-</button>
+                        <input type="number" id="qty" value="1" min="1" class="w-12 text-center bg-transparent border-none focus:ring-0 text-primary font-jost text-[14px]">
+                        <button class="px-4 py-3 text-on-surface-variant hover:text-secondary transition-colors" onclick="document.getElementById('qty').value = parseInt(document.getElementById('qty').value) + 1">+</button>
+                    </div>
+                    
+                    <a href="cart.html" class="flex-1 text-center bg-primary text-background font-jost text-[12px] tracking-[0.2em] uppercase py-4 hover:bg-secondary transition-colors duration-300">
+                        Add to Cart
+                    </a>
+                </div>
+                
+                <p class="font-jost text-[10px] tracking-[0.1em] text-on-surface-variant mt-6 uppercase text-center opacity-70 flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-[14px]">local_shipping</span> Free shipping worldwide
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container py-16 px-margin-mobile md:px-margin-desktop border-t border-outline-variant">
+        <div class="max-w-container-max mx-auto">
+            <div class="flex flex-col md:flex-row justify-between mb-16 gap-10">
+                <div class="max-w-md">
+                    <h4 class="font-section-title text-[24px] text-primary mb-4 italic">Stay Connected</h4>
+                    <p class="font-body-main text-on-surface-variant mb-6">Join our journal to receive stories from the artisan villages, early access to new collections, and insights into the Dhokra craft.</p>
+                    <div class="flex border-b border-outline-variant pb-2">
+                        <input type="email" placeholder="Email Address" class="bg-transparent border-none outline-none flex-grow font-body-main text-on-surface placeholder:text-on-surface-variant/50 focus:ring-0 p-0" />
+                        <button class="font-jost text-[12px] uppercase tracking-widest text-primary hover:text-secondary transition-colors">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-between border-t border-outline-variant pt-8">
+                <div class="flex items-center justify-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px] mb-8 md:mb-0">
+                    <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-top" />
+                </div>
+                <p class="font-jost text-[12px] tracking-[0.1em] text-on-surface-variant/70 text-center md:text-left">
+                    Â© 2024 ALOHA HERITAGE. PRESERVING THE DHOKRA LEGACY.<br/>
+                    <span class="italic font-body-main text-[16px] tracking-normal">Made in Odisha. Present everywhere.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.remove('bg-background/90', 'border-outline-variant/30');
+                nav.classList.add('bg-[#F5EAD0]', 'shadow-sm', 'border-outline-variant/30');
+            } else {
+                nav.classList.remove('bg-[#F5EAD0]', 'shadow-sm');
+                nav.classList.add('bg-background/90', 'border-outline-variant/30');
+            }
+        });
+    </script>
+</body>
+</html>
+

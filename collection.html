@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
@@ -125,19 +125,34 @@
     <div class="max-w-container-max w-full mx-auto flex items-center justify-between">
         <!-- Logo Left -->
         <a href="index.html" class="flex-shrink-0 flex items-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px]">
-            <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-top transition-all duration-700" id="nav-logo" />
+            <img src="logo.png" alt="ALOHA" class="w-full h-full object-contain transition-all duration-700" id="nav-logo" />
         </a>
         <!-- Links Right -->
         <div class="hidden md:flex items-center gap-10 font-label-ui text-label-ui uppercase tracking-widest">
             <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="story.html">STORY</a>
-            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="index.html#process">CRAFT PROCESS</a>
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="index.html">CRAFT PROCESS</a>
             <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="artisans.html">ARTISANS</a>
             <a class="text-secondary border-b border-secondary transition-colors duration-300 interactive-link nav-link-text" href="collection.html">COLLECTION</a>
             <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="impact.html">IMPACT</a>
             <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="connect.html">CONTACT</a>
+            <div class="relative group">
+                <a href="#" class="text-on-surface hover:text-secondary transition-colors duration-300 flex items-center nav-link-text">
+                    <span class="material-symbols-outlined text-[24px]">account_circle</span>
+                </a>
+                <div class="absolute right-0 top-full mt-4 w-48 bg-surface-container border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-lg">
+                    <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface border-b border-outline-variant/50">LOGIN</a>
+                    <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface border-b border-outline-variant/50">MY ACCOUNT</a>
+                    <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface">ORDERS</a>
+                </div>
+            </div>
+            <a href="cart.html" class="text-on-surface hover:text-secondary transition-colors duration-300 flex items-center relative nav-link-text">
+                <span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+                <span class="absolute -top-1 -right-2 bg-secondary text-background text-[8px] w-4 h-4 rounded-full flex items-center justify-center font-bold">1</span>
+            </a>
         </div>
         <!-- Mobile Menu Placeholder -->
-        <div class="md:hidden">
+        <div class="md:hidden flex items-center gap-4">
+            <a href="cart.html" class="text-on-surface nav-mobile-icon transition-colors duration-700"><span class="material-symbols-outlined text-[24px]">shopping_bag</span></a>
             <span class="material-symbols-outlined text-3xl text-on-surface nav-mobile-icon transition-colors duration-700">menu</span>
         </div>
     </div>
@@ -149,8 +164,8 @@
 <div class="w-full h-full bg-cover bg-center sepia-overlay scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTPQLTclkZ6uNf8W4agddWQSiHcUb2C5CzShA7xlXFtxgveCpqQYPYIK_0HScHfFpC0RR5y1EJe6LlYnK7Q_7PXJ4JIYJ_Qfpmgy6KQeOSsxrI354zcjMMVHFwYrzzJ3FS644_v5hi0OkBRnHEKclS0vqDEz6JZADD3E2jq4WRzR2CqkC7IHcW0z95AfZpKA2ZgrGydntnp2zgBhTYLZh7qfokC_Y36H3arXUOfJ1GwG3m-FnT1wxFTEXT54ABut48D5DhH3gPyhn2')"></div>
 </div>
 <div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-center">
-<h1 class="font-display-lg text-[64px] md:text-[96px] text-primary-container mb-4" style="font-family: 'Libre Caslon Text', serif; font-weight: 200;">The Collection.</h1>
-<p class="italic text-[20px] md:text-[28px] text-secondary max-w-2xl mx-auto">Each piece is cast once. Named once. Yours once.</p>
+<h1 class="font-display-lg text-[64px] md:text-[96px] text-[#F5EAD0] mb-4" style="font-family: 'Libre Caslon Text', serif; font-weight: 200;">The Collection.</h1>
+<p class="italic text-[20px] md:text-[28px] text-[#F5EAD0]/80 max-w-2xl mx-auto">Each piece is cast once. Named once. Yours once.</p>
 </div>
 
 <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent"></div>
@@ -167,13 +182,13 @@
 <button class="font-jost text-[10px] tracking-[0.2em] text-on-surface-variant hover:text-secondary transition-colors">CUSTOM</button>
 </div>
 <div class="font-jost text-[10px] tracking-[0.2em] text-on-surface-variant">
-                    SORT BY: <span class="text-primary font-medium cursor-pointer hover:text-secondary px-2">NEWEST</span> · <span class="cursor-pointer hover:text-secondary px-2">PRICE</span> · <span class="cursor-pointer hover:text-secondary px-2">ARTISAN</span>
+                    SORT BY: <span class="text-primary font-medium cursor-pointer hover:text-secondary px-2">NEWEST</span> Â· <span class="cursor-pointer hover:text-secondary px-2">PRICE</span> Â· <span class="cursor-pointer hover:text-secondary px-2">ARTISAN</span>
 </div>
 </div>
 </section>
 <section class="px-margin-mobile md:px-margin-desktop mb-section-padding-v">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-24">
-<div class="group cursor-pointer">
+<a href="product-details.html" class="group cursor-pointer block">
 <div class="relative overflow-hidden mb-6 aspect-square bg-surface-container flex items-center justify-center p-8 transition-all duration-700 group-hover:border group-hover:border-outline-variant">
 <img alt="Fish" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03]" src="https://lh3.googleusercontent.com/aida/ADBb0uiwgtbLB74L56E5I3yOJK9UuDLo8_v2rCtGecnxQllzTRrxAnqdijQ_2ZkasoE6ipG-ltfHoF-9kb95dTX9F3eWS9Fgxz13YSqZCRQ1xcnVO6oUXzdJVosSRRLXP7dYrN4KOw4Xrkr25aUsypL4jzAHpr3BHU_1BwEaZAbCQyc1S8kpjO2zsPoF3Ss4MJ6pO8sVGzSyJizubnqwq-732GGuGLjxTS0g7HNHmB2lEs07Ewv6aZtzmPmtyp-9"/>
 <img alt="Authenticity Badge" class="absolute bottom-4 right-4 w-12 h-12 product-card-badge" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
@@ -184,11 +199,11 @@
 <div class="space-y-1">
 <p class="font-jost text-[9px] tracking-[0.2em] text-on-surface-variant">BY LAKHAN BAGLI</p>
 <h3 class="font-section-title italic text-[22px] leading-tight" style="font-family: 'Libre Caslon Text', serif;">The Bronze Minnow</h3>
-<p class="font-dm-serif text-[14px] text-on-surface-variant">Handcast brass · Tribal fish motif</p>
-<p class="font-jost text-[14px] font-light mt-2">₹ 3,800</p>
+<p class="font-dm-serif text-[14px] text-on-surface-variant">Handcast brass Â· Tribal fish motif</p>
+<p class="font-jost text-[14px] font-light mt-2">â‚¹ 3,800</p>
 </div>
-</div>
-<div class="group cursor-pointer">
+</a>
+<a href="product-details.html" class="group cursor-pointer block">
 <div class="relative overflow-hidden mb-6 aspect-square bg-surface-container flex items-center justify-center p-8 transition-all duration-700 group-hover:border group-hover:border-outline-variant">
 <img alt="Turtle" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03]" src="https://lh3.googleusercontent.com/aida/ADBb0ujGsK-Q-B5lqDauuBr55n3ZVmMbBzXMebUH7DN3u0fMJiVsuLd_X6K-mShK_gOWtdMvIj935nPKIAcpa19q1X--rJFXwOhJRHIeQVSMGgn3Ey5oiVLkFlo_J5CODqtYZW4EXNclYfwMXtECSublarQFvEfRwoOEUNW_yPtjXVXCD5EboMYVuz9mtXBrtajxXcfUdMr24FwamJLwTCURihxBfE8A78EdqVprFJrU402CrahRL6MUGUE9lzQO"/>
 <img alt="Authenticity Badge" class="absolute bottom-4 right-4 w-12 h-12 product-card-badge" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
@@ -199,11 +214,11 @@
 <div class="space-y-1">
 <p class="font-jost text-[9px] tracking-[0.2em] text-on-surface-variant">BY ARJUN DANG</p>
 <h3 class="font-section-title italic text-[22px] leading-tight" style="font-family: 'Libre Caslon Text', serif;">Grounded Wisdom</h3>
-<p class="font-dm-serif text-[14px] text-on-surface-variant">Lost-wax bronze · Tortoise totem</p>
-<p class="font-jost text-[14px] font-light mt-2">₹ 4,200</p>
+<p class="font-dm-serif text-[14px] text-on-surface-variant">Lost-wax bronze Â· Tortoise totem</p>
+<p class="font-jost text-[14px] font-light mt-2">â‚¹ 4,200</p>
 </div>
-</div>
-<div class="group cursor-pointer">
+</a>
+<a href="product-details.html" class="group cursor-pointer block">
 <div class="relative overflow-hidden mb-6 aspect-square bg-surface-container flex items-center justify-center p-8 transition-all duration-700 group-hover:border group-hover:border-outline-variant">
 <img alt="Armadillo" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03]" src="https://lh3.googleusercontent.com/aida/ADBb0uiKf3P0CAQiCcwuzdzvt9cfflu54pokQSzyYkYnnGpD2DxxXekbUCT7_EVb5n2Use_npYFV3-aeEiU5jkyjB06OmcQL0V-s577TQ4w2i4dAhrra_VTga_JgoT5YW0Vk9ZDbtf7X4aYlouBJlWrFh8lc4FKuAtjNYnsChShJRarXQSq_eY6f8wkIg-dycA7Q7Cii2WnGHaTP8DBTR5ntS663ddvBNU4zvaQ8qaIyMbB1H8PubYx-775zsfWI"/>
 <img alt="Authenticity Badge" class="absolute bottom-4 right-4 w-12 h-12 product-card-badge" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
@@ -214,11 +229,11 @@
 <div class="space-y-1">
 <p class="font-jost text-[9px] tracking-[0.2em] text-on-surface-variant">BY MANJU PANI</p>
 <h3 class="font-section-title italic text-[22px] leading-tight" style="font-family: 'Libre Caslon Text', serif;">The Shielded Wanderer</h3>
-<p class="font-dm-serif text-[14px] text-on-surface-variant">Textured brass wire · Pangolin figure</p>
-<p class="font-jost text-[14px] font-light mt-2">₹ 5,100</p>
+<p class="font-dm-serif text-[14px] text-on-surface-variant">Textured brass wire Â· Pangolin figure</p>
+<p class="font-jost text-[14px] font-light mt-2">â‚¹ 5,100</p>
 </div>
-</div>
-<div class="group cursor-pointer">
+</a>
+<a href="product-details.html" class="group cursor-pointer block">
 <div class="relative overflow-hidden mb-6 aspect-square bg-surface-container flex items-center justify-center p-8 transition-all duration-700 group-hover:border group-hover:border-outline-variant">
 <img alt="Elephants" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03]" src="https://lh3.googleusercontent.com/aida/ADBb0ughEHgC5f_K_exDEDp6iFhxISk9DmSFivSUK8fmq4jNoLoThEEB1yZ5qpUNyD3iB5ydpEbV-fIefKiqfGILyIiEDRhR7bsAqRXWcDuWOdfBayX52Qq3dHVy_chWwI38JZD4aHwdsfv_VSpfr0kUH9Rcz69-OI2p3oF8Xpl9mZ2B47kZ5Ya9OOXUXgLW2S1juSupU1BGutJzUYZI4TRsjRxTXDsX-nkD3UYIRtdGuiHU_Rbz8xGSGFmwyIk6"/>
 <img alt="Authenticity Badge" class="absolute bottom-4 right-4 w-12 h-12 product-card-badge" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
@@ -229,11 +244,11 @@
 <div class="space-y-1">
 <p class="font-jost text-[9px] tracking-[0.2em] text-on-surface-variant">BY LAKHAN BAGLI</p>
 <h3 class="font-section-title italic text-[22px] leading-tight" style="font-family: 'Libre Caslon Text', serif;">Sacred Kinship</h3>
-<p class="font-dm-serif text-[14px] text-on-surface-variant">Detailed bronze work · Pair of elephants</p>
-<p class="font-jost text-[14px] font-light mt-2">₹ 9,500</p>
+<p class="font-dm-serif text-[14px] text-on-surface-variant">Detailed bronze work Â· Pair of elephants</p>
+<p class="font-jost text-[14px] font-light mt-2">â‚¹ 9,500</p>
 </div>
-</div>
-<div class="group cursor-pointer">
+</a>
+<a href="product-details.html" class="group cursor-pointer block">
 <div class="relative overflow-hidden mb-6 aspect-square bg-surface-container flex items-center justify-center p-8 transition-all duration-700 group-hover:border group-hover:border-outline-variant">
 <img class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03] sepia-overlay" data-alt="A detailed close-up of a Dhokra brass sun sculpture, handcrafted with intricate wire patterns and a radiant motif. The sculpture sits on a minimalist, parchment-colored surface, illuminated by warm, directional lighting that creates long, dramatic shadows. The aesthetic is editorial and high-fashion, with a rich palette of deep bronze and antique gold against a clean, off-white backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlAnGOWXg7XEXSE24bUeOuyrlSddjnNpCJyBLn8oMwf07KXl-FjL6tjGYtEiqka8FDD8LCfj9gtJV7i4w74VINA_pJXH3nToVIOOnknaB04ezsMRITbV1lDT-JCzA0xzo2uSS-Krs3cbtg9fFcCQb3yF9V2FP4Xc4C9hyvmR0LAQUzDFSo_53Njckq_gBz0EHzc5xfHvP-uChek6BKMV-xpu6OWY56-O50vQSLYh2pggzxW1xfvXgToVKWqM4zTF2t4cgtFnwR4oNI"/>
 <img alt="Authenticity Badge" class="absolute bottom-4 right-4 w-12 h-12 product-card-badge" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
@@ -244,11 +259,11 @@
 <div class="space-y-1">
 <p class="font-jost text-[9px] tracking-[0.2em] text-on-surface-variant">BY SOMNATH OJHA</p>
 <h3 class="font-section-title italic text-[22px] leading-tight" style="font-family: 'Libre Caslon Text', serif;">Solar Radiance</h3>
-<p class="font-dm-serif text-[14px] text-on-surface-variant">Concentric wire circles · Sun disk</p>
-<p class="font-jost text-[14px] font-light mt-2">₹ 6,400</p>
+<p class="font-dm-serif text-[14px] text-on-surface-variant">Concentric wire circles Â· Sun disk</p>
+<p class="font-jost text-[14px] font-light mt-2">â‚¹ 6,400</p>
 </div>
-</div>
-<div class="group cursor-pointer">
+</a>
+<a href="product-details.html" class="group cursor-pointer block">
 <div class="relative overflow-hidden mb-6 aspect-square bg-surface-container flex items-center justify-center p-8 transition-all duration-700 group-hover:border group-hover:border-outline-variant">
 <img class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03] sepia-overlay" data-alt="A handcrafted Dhokra brass peacock sculpture, showing off its intricate wire-patterned tail. The piece is captured in a high-fashion editorial style, set against a warm clay-toned wall with soft, natural light coming from a nearby window. The mood is timeless and luxurious, emphasizing the tactile qualities of the metal and the craftsmanship involved in the tribal art form." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRrDZuiihaf9H3pZk4pBoPODVDU2tYpahsdd12rAtRGC9u9LJWReLphAjAW0Va1H2d3u0vwdrbd2Ve37-o7-3U7ixOU5pAk0SFSSJ9W2Dos2j4dNQRcVblBRg2YjnrNMtd1E3NBfLpFQDIW4Gj9UA8ZXFyXsPj2zRwlmDT1FEI_JKHIUkTPkQKfiJvyava4spDYV7aT7hOZd9MUkdBIz2IHwphngUIh6Kp41YUnqW9FkPvonI4rxrv82ZJfRp4voSrhsji-77bPSRN"/>
 <img alt="Authenticity Badge" class="absolute bottom-4 right-4 w-12 h-12 product-card-badge" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
@@ -259,10 +274,10 @@
 <div class="space-y-1">
 <p class="font-jost text-[9px] tracking-[0.2em] text-on-surface-variant">BY BINAY DHURUA</p>
 <h3 class="font-section-title italic text-[22px] leading-tight" style="font-family: 'Libre Caslon Text', serif;">The Forest Herald</h3>
-<p class="font-dm-serif text-[14px] text-on-surface-variant">Brass peacock · Ritual herald</p>
-<p class="font-jost text-[14px] font-light mt-2">₹ 7,200</p>
+<p class="font-dm-serif text-[14px] text-on-surface-variant">Brass peacock Â· Ritual herald</p>
+<p class="font-jost text-[14px] font-light mt-2">â‚¹ 7,200</p>
 </div>
-</div>
+</a>
 </div>
 </section>
 <section class="relative mb-section-padding-v overflow-hidden">
@@ -306,7 +321,7 @@
 <div class="w-[320px] aspect-[1.6/1] bg-surface-container border border-outline-variant p-6 relative overflow-hidden shadow-2xl">
 <div class="flex justify-between items-start mb-8">
 <div class="font-jost text-[9px] tracking-[0.2em]">ORIGIN: ODISHA</div>
-<div class="font-jost text-[9px] tracking-[0.2em]">№ 003 / 003</div>
+<div class="font-jost text-[9px] tracking-[0.2em]">â„– 003 / 003</div>
 </div>
 <div class="space-y-4">
 <div class="border-b border-outline-variant pb-1">
@@ -388,7 +403,7 @@
                 <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-top" />
             </div>
             <p class="font-jost text-[12px] tracking-[0.1em] text-on-surface-variant/70 text-center md:text-left">
-                © 2024 ALOHA HERITAGE. PRESERVING THE DHOKRA LEGACY.<br/>
+                Â© 2024 ALOHA HERITAGE. PRESERVING THE DHOKRA LEGACY.<br/>
                 <span class="italic font-body-main text-[16px] tracking-normal">Made in Odisha. Present everywhere.</span>
             </p>
             <div class="flex gap-6 mt-8 md:mt-0 font-jost text-[12px] tracking-[0.1em] uppercase">
@@ -429,3 +444,4 @@
         });
     </script>
 </body></html>
+

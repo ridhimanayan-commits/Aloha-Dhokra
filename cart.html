@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | ALOHA</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Literata:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500&family=DM+Serif+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#FDF6EC",
+                        primary: "#3D1A00",
+                        "primary-container": "#F5EAD0",
+                        secondary: "#8B3A00",
+                        "on-surface": "#2A2522",
+                        "on-surface-variant": "#584D46",
+                        "surface-container": "#F8EDD3",
+                        "outline-variant": "#D0C4BB",
+                    },
+                    fontFamily: {
+                        "display-lg": ['"Libre Caslon Text"', "serif"],
+                        "section-title": ['"Literata"', "serif"],
+                        "body-main": ['"DM Sans"', "sans-serif"],
+                        "jost": ['"Jost"', "sans-serif"],
+                        "dm-serif": ['"DM Serif Text"', "serif"],
+                    },
+                    spacing: {
+                        "margin-desktop": "10vw",
+                        "margin-mobile": "24px",
+                        "section-padding-v": "120px",
+                        "gutter": "2rem",
+                    },
+                    maxWidth: {
+                        "container-max": "1440px",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased flex flex-col min-h-screen">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 left-0 w-full z-50 flex flex-col pt-8 pb-4 px-margin-mobile md:px-margin-desktop bg-background/90 backdrop-blur-sm transition-all duration-700 border-b border-outline-variant/30" id="main-nav">
+        <div class="max-w-container-max w-full mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex-shrink-0 flex items-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px]">
+                <img src="logo.png" alt="ALOHA" class="w-full h-full object-contain transition-all duration-700" id="nav-logo" />
+            </a>
+            <div class="hidden md:flex items-center gap-10 font-jost text-[12px] uppercase tracking-widest">
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="story.html">STORY</a>
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="index.html">CRAFT PROCESS</a>
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="artisans.html">ARTISANS</a>
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="collection.html">COLLECTION</a>
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="impact.html">IMPACT</a>
+                <a class="text-on-surface hover:text-secondary transition-colors duration-300" href="connect.html">CONTACT</a>
+                
+                <div class="relative group">
+                    <a href="#" class="text-on-surface hover:text-secondary transition-colors duration-300 flex items-center">
+                        <span class="material-symbols-outlined text-[24px]">account_circle</span>
+                    </a>
+                    <div class="absolute right-0 top-full mt-4 w-48 bg-surface-container border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-lg">
+                        <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface border-b border-outline-variant/50">LOGIN</a>
+                        <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface border-b border-outline-variant/50">MY ACCOUNT</a>
+                        <a href="#" class="block px-6 py-3 text-[10px] hover:bg-background transition-colors text-on-surface">ORDERS</a>
+                    </div>
+                </div>
+                <a href="cart.html" class="text-secondary border-b border-secondary transition-colors duration-300 flex items-center relative">
+                    <span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+                    <span class="absolute -top-1 -right-2 bg-secondary text-background text-[8px] w-4 h-4 rounded-full flex items-center justify-center font-bold">1</span>
+                </a>
+            </div>
+            <div class="md:hidden flex items-center gap-4">
+                <a href="cart.html" class="text-secondary"><span class="material-symbols-outlined">shopping_bag</span></a>
+                <span class="material-symbols-outlined text-3xl text-on-surface nav-mobile-icon">menu</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-[140px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full mb-section-padding-v">
+        <h1 class="font-display-lg text-[48px] text-primary mb-12 border-b border-outline-variant pb-6">Your Cart</h1>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div class="lg:col-span-8">
+                <!-- Cart Header -->
+                <div class="hidden md:grid grid-cols-12 gap-4 border-b border-outline-variant pb-4 mb-8 font-jost text-[10px] tracking-widest text-on-surface-variant uppercase">
+                    <div class="col-span-6">Product</div>
+                    <div class="col-span-3 text-center">Quantity</div>
+                    <div class="col-span-3 text-right">Total</div>
+                </div>
+                
+                <!-- Cart Item -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center border-b border-outline-variant/50 pb-8 mb-8">
+                    <div class="col-span-1 md:col-span-6 flex gap-6 items-center">
+                        <div class="w-24 h-24 bg-surface-container flex-shrink-0 flex items-center justify-center p-2">
+                            <img src="https://lh3.googleusercontent.com/aida/ADBb0uiwgtbLB74L56E5I3yOJK9UuDLo8_v2rCtGecnxQllzTRrxAnqdijQ_2ZkasoE6ipG-ltfHoF-9kb95dTX9F3eWS9Fgxz13YSqZCRQ1xcnVO6oUXzdJVosSRRLXP7dYrN4KOw4Xrkr25aUsypL4jzAHpr3BHU_1BwEaZAbCQyc1S8kpjO2zsPoF3Ss4MJ6pO8sVGzSyJizubnqwq-732GGuGLjxTS0g7HNHmB2lEs07Ewv6aZtzmPmtyp-9" alt="The Bronze Minnow" class="w-full h-full object-contain mix-blend-multiply">
+                        </div>
+                        <div>
+                            <h3 class="font-section-title italic text-[20px] text-primary mb-1">The Bronze Minnow</h3>
+                            <p class="font-jost text-[12px] text-on-surface-variant mb-2">â‚¹ 3,800</p>
+                            <button class="font-jost text-[10px] uppercase tracking-widest text-secondary hover:text-primary transition-colors flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]">delete</span> Remove
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-span-1 md:col-span-3 flex justify-start md:justify-center">
+                        <div class="flex items-center border border-outline-variant">
+                            <button class="px-3 py-2 text-on-surface-variant hover:text-secondary transition-colors" onclick="document.getElementById('cart-qty').value = Math.max(1, parseInt(document.getElementById('cart-qty').value) - 1)">-</button>
+                            <input type="number" id="cart-qty" value="1" min="1" class="w-10 text-center bg-transparent border-none focus:ring-0 text-primary font-jost text-[14px]">
+                            <button class="px-3 py-2 text-on-surface-variant hover:text-secondary transition-colors" onclick="document.getElementById('cart-qty').value = parseInt(document.getElementById('cart-qty').value) + 1">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-span-1 md:col-span-3 text-left md:text-right font-jost text-[16px] text-primary">
+                        â‚¹ 3,800
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-4">
+                <div class="bg-surface-container p-8">
+                    <h3 class="font-section-title italic text-[24px] text-primary mb-6 border-b border-outline-variant pb-4">Order Summary</h3>
+                    
+                    <div class="space-y-4 mb-6 font-body-main text-on-surface-variant">
+                        <div class="flex justify-between">
+                            <span>Subtotal</span>
+                            <span>â‚¹ 3,800</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Shipping</span>
+                            <span>Calculated at checkout</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between font-section-title italic text-[20px] text-primary border-t border-outline-variant pt-6 mb-8">
+                        <span>Total</span>
+                        <span>â‚¹ 3,800</span>
+                    </div>
+                    
+                    <button class="w-full bg-primary text-background font-jost text-[12px] tracking-[0.2em] uppercase py-4 hover:bg-secondary transition-colors duration-300">
+                        Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container py-16 px-margin-mobile md:px-margin-desktop border-t border-outline-variant mt-auto">
+        <div class="max-w-container-max mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center justify-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px] mb-8 md:mb-0">
+                    <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-top" />
+                </div>
+                <p class="font-jost text-[12px] tracking-[0.1em] text-on-surface-variant/70 text-center md:text-left">
+                    Â© 2024 ALOHA HERITAGE. PRESERVING THE DHOKRA LEGACY.<br/>
+                    <span class="italic font-body-main text-[16px] tracking-normal">Made in Odisha. Present everywhere.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.remove('bg-background/90', 'border-outline-variant/30');
+                nav.classList.add('bg-[#F5EAD0]', 'shadow-sm', 'border-outline-variant/30');
+            } else {
+                nav.classList.remove('bg-[#F5EAD0]', 'shadow-sm');
+                nav.classList.add('bg-background/90', 'border-outline-variant/30');
+            }
+        });
+    </script>
+</body>
+</html>
+
