@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IMPACT | ALOHA HERITAGE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,700;1,400&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:wght@300;400;700&amp;family=Cormorant+Garamond:ital,wght@0,300;1,300&amp;family=Jost:wght@300;400&amp;family=DM+Serif+Text&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .wire-svg {
+            position: absolute;
+            z-index: 10;
+            pointer-events: none;
+            stroke: #A0522D;
+            fill: transparent;
+            stroke-width: 1px;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 10s linear infinite alternate;
+        }
+        @keyframes dash {
+            to { stroke-dashoffset: 0; }
+        }
+        .cormorant { font-family: 'Cormorant Garamond', serif; }
+        .jost { font-family: 'Jost', sans-serif; }
+        .dm-serif { font-family: 'DM Serif Text', serif; }
+        
+        .counter-value {
+            display: inline-block;
+        }
+        .parchment-overlay {
+            mix-blend-mode: multiply;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#f9b98f",
+                    "primary-container": "#3d1a00",
+                    "tertiary-fixed": "#ffdbc9",
+                    "inverse-on-surface": "#fbf0d6",
+                    "on-error": "#ffffff",
+                    "outline": "#84746b",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#36301f",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#201b0b",
+                    "tertiary-fixed-dim": "#ffb68c",
+                    "on-surface": "#201b0b",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#702d00",
+                    "surface-container": "#f8edd3",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#835331",
+                    "surface-container-high": "#f2e7cd",
+                    "surface-bright": "#fff8ef",
+                    "primary-fixed": "#ffdcc6",
+                    "on-secondary-fixed": "#341100",
+                    "on-tertiary-fixed": "#321200",
+                    "secondary": "#9b450d",
+                    "on-tertiary-fixed-variant": "#753400",
+                    "tertiary-container": "#3f1900",
+                    "secondary-container": "#fe9256",
+                    "surface": "#fff8ef",
+                    "on-surface-variant": "#51443c",
+                    "secondary-fixed-dim": "#ffb691",
+                    "on-tertiary-container": "#d66f28",
+                    "primary": "#1d0900",
+                    "tertiary": "#1e0800",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#311300",
+                    "surface-container-low": "#fef3d8",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#e4d9c0",
+                    "secondary-fixed": "#ffdbcb",
+                    "inverse-primary": "#f9b98f",
+                    "surface-container-highest": "#ece2c8",
+                    "on-primary-container": "#b67e59",
+                    "on-secondary-fixed-variant": "#783100",
+                    "on-primary-fixed-variant": "#683c1c",
+                    "background": "#fff8ef",
+                    "surface-variant": "#ece2c8",
+                    "outline-variant": "#d6c3b8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "32px",
+                    "container-max": "1440px",
+                    "section-padding-v": "120px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "body-main": ["Literata"],
+                    "display-lg": ["Libre Caslon Text"],
+                    "button-text": ["DM Sans"],
+                    "section-title": ["Libre Caslon Text"],
+                    "label-ui": ["DM Sans"]
+            },
+            "fontSize": {
+                    "body-main": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "84px", "letterSpacing": "0.05em", "fontWeight": "300"}],
+                    "button-text": ["13px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "400"}],
+                    "section-title": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "label-ui": ["12px", {"lineHeight": "16px", "letterSpacing": "0.18em", "fontWeight": "300"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-main selection:bg-primary-fixed-dim">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex flex-col pt-8 pb-4 px-margin-mobile md:px-margin-desktop bg-background/90 backdrop-blur-sm transition-all duration-700 border-b border-outline-variant/30" id="main-nav">
+    <div class="max-w-container-max w-full mx-auto flex items-center justify-between">
+        <!-- Logo Left -->
+        <a href="index.html" class="flex-shrink-0 flex items-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px]">
+            <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-top transition-all duration-700" id="nav-logo" />
+        </a>
+        <!-- Links Right -->
+        <div class="hidden md:flex items-center gap-10 font-label-ui text-label-ui uppercase tracking-widest">
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="story.html">STORY</a>
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="index.html#process">CRAFT PROCESS</a>
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="artisans.html">ARTISANS</a>
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="collection.html">COLLECTION</a>
+            <a class="text-secondary border-b border-secondary transition-colors duration-300 interactive-link nav-link-text" href="impact.html">IMPACT</a>
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="connect.html">CONTACT</a>
+        </div>
+        <!-- Mobile Menu Placeholder -->
+        <div class="md:hidden">
+            <span class="material-symbols-outlined text-3xl text-on-surface nav-mobile-icon transition-colors duration-700">menu</span>
+        </div>
+    </div>
+</nav>
+
+<main class="relative pt-[120px]">
+<!-- SVG Wire -->
+<svg class="wire-svg w-full h-full" preserveaspectratio="none" viewbox="0 0 1440 5000">
+<path d="M1440,200 Q1200,600 800,400 T200,800 S-100,1200 400,1600 T1200,2000 S1500,2500 800,2800 T200,3400 S400,4000 1200,4400"></path>
+</svg>
+<!-- HERO SECTION -->
+<section class="min-h-[80vh] bg-[#3D1A00] flex flex-col justify-center relative overflow-hidden pt-32 pb-32">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-12 gap-gutter relative z-20">
+<div class="col-span-12 md:col-span-7">
+<h2 class="cormorant text-[72px] leading-[1.1] text-[#F5EAD0] font-extralight mb-8 max-w-2xl">
+                        Every purchase is an act of preservation.
+                    </h2>
+<p class="cormorant italic text-[28px] text-[#C4621A]">
+                        Here is where your money goes.
+                    </p>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-60 mix-blend-screen pointer-events-none translate-x-1/4 translate-y-12">
+<img alt="Dhokra metalwork elephants" class="w-full h-full object-contain object-right-top scale-110" src="https://lh3.googleusercontent.com/aida/ADBb0ughEHgC5f_K_exDEDp6iFhxISk9DmSFivSUK8fmq4jNoLoThEEB1yZ5qpUNyD3iB5ydpEbV-fIefKiqfGILyIiEDRhR7bsAqRXWcDuWOdfBayX52Qq3dHVy_chWwI38JZD4aHwdsfv_VSpfr0kUH9Rcz69-OI2p3oF8Xpl9mZ2B47kZ5Ya9OOXUXgLW2S1juSupU1BGutJzUYZI4TRsjRxTXDsX-nkD3UYIRtdGuiHU_Rbz8xGSGFmwyIk6"/>
+</div>
+</section>
+<!-- LIVE IMPACT TRACKER -->
+<section class="py-section-padding-v bg-surface-container-low relative">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter text-center items-end">
+<div class="space-y-4">
+<div class="cormorant font-extralight text-[96px] text-[#C4621A] leading-none">
+<span class="counter" data-target="47">0</span>
+</div>
+<p class="jost uppercase text-[12px] tracking-[0.2em] text-[#D4B896]">Artisans</p>
+</div>
+<div class="space-y-4">
+<div class="cormorant font-extralight text-[96px] text-[#C4621A] leading-none">
+<span class="counter" data-target="6">0</span>
+</div>
+<p class="jost uppercase text-[12px] tracking-[0.2em] text-[#D4B896]">Villages</p>
+</div>
+<div class="space-y-4">
+<div class="cormorant font-extralight text-[96px] text-[#C4621A] leading-none">
+<span class="counter" data-target="1247">0</span>
+</div>
+<p class="jost uppercase text-[12px] tracking-[0.2em] text-[#D4B896]">Pieces</p>
+</div>
+<div class="space-y-4">
+<div class="cormorant font-extralight text-[64px] text-[#C4621A] leading-none">
+                            ₹<span class="counter" data-target="3840000">0</span>
+</div>
+<p class="jost uppercase text-[12px] tracking-[0.2em] text-[#D4B896]">Paid to Artisans</p>
+</div>
+</div>
+</div>
+</section>
+<!-- WHAT ALOHA DOES -->
+<section class="py-section-padding-v bg-background">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="space-y-8 border-l border-outline-variant pl-8 pt-4">
+<span class="font-label-ui text-label-ui text-secondary">01 DIRECT PAY</span>
+<p class="font-body-main text-body-main text-on-surface leading-relaxed">
+                            100% of product revenue (minus materials) goes to the artisan. ALOHA charges a transparent platform fee of 12%.
+                        </p>
+</div>
+<div class="space-y-8 border-l border-outline-variant pl-8 pt-4 mt-12 md:mt-24">
+<span class="font-label-ui text-label-ui text-secondary">02 IDENTITY</span>
+<p class="font-body-main text-body-main text-on-surface leading-relaxed">
+                            Every artisan is named. Every piece is credited. We do not allow anonymous craftsmanship.
+                        </p>
+</div>
+<div class="space-y-8 border-l border-outline-variant pl-8 pt-4">
+<span class="font-label-ui text-label-ui text-secondary">03 ARCHIVE</span>
+<p class="font-body-main text-body-main text-on-surface leading-relaxed">
+                            We are building a permanent digital archive of Dhokra oral histories, motif libraries, and process documentation — free and open to researchers.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SUSTAINABILITY STRIP -->
+<section class="bg-surface-container py-12 overflow-hidden border-y border-outline-variant">
+<div class="flex whitespace-nowrap animate-marquee">
+<div class="flex items-center gap-12 px-6">
+<span class="flex items-center gap-4 jost uppercase text-[14px] tracking-widest text-on-surface-variant">
+<svg fill="none" height="12" viewbox="0 0 12 12" width="12"><circle cx="6" cy="6" r="4" stroke="#A0522D" stroke-width="0.5"></circle></svg>
+                        Handmade
+                    </span>
+<span class="flex items-center gap-4 jost uppercase text-[14px] tracking-widest text-on-surface-variant">
+<svg fill="none" height="12" viewbox="0 0 12 12" width="12"><circle cx="6" cy="6" r="4" stroke="#A0522D" stroke-width="0.5"></circle></svg>
+                        Brass (recycled)
+                    </span>
+<span class="flex items-center gap-4 jost uppercase text-[14px] tracking-widest text-on-surface-variant">
+<svg fill="none" height="12" viewbox="0 0 12 12" width="12"><circle cx="6" cy="6" r="4" stroke="#A0522D" stroke-width="0.5"></circle></svg>
+                        Beeswax
+                    </span>
+<span class="flex items-center gap-4 jost uppercase text-[14px] tracking-widest text-on-surface-variant">
+<svg fill="none" height="12" viewbox="0 0 12 12" width="12"><circle cx="6" cy="6" r="4" stroke="#A0522D" stroke-width="0.5"></circle></svg>
+                        Clay
+                    </span>
+<span class="flex items-center gap-4 jost uppercase text-[14px] tracking-widest text-on-surface-variant">
+<svg fill="none" height="12" viewbox="0 0 12 12" width="12"><circle cx="6" cy="6" r="4" stroke="#A0522D" stroke-width="0.5"></circle></svg>
+                        Zero industrial waste
+                    </span>
+<span class="flex items-center gap-4 jost uppercase text-[14px] tracking-widest text-on-surface-variant">
+<svg fill="none" height="12" viewbox="0 0 12 12" width="12"><circle cx="6" cy="6" r="4" stroke="#A0522D" stroke-width="0.5"></circle></svg>
+                        Slow craft
+                    </span>
+<span class="flex items-center gap-4 jost uppercase text-[14px] tracking-widest text-on-surface-variant">
+<svg fill="none" height="12" viewbox="0 0 12 12" width="12"><circle cx="6" cy="6" r="4" stroke="#A0522D" stroke-width="0.5"></circle></svg>
+                        One piece at a time
+                    </span>
+</div>
+<!-- Duplicate for loop -->
+<div class="flex items-center gap-12 px-6">
+<span class="flex items-center gap-4 jost uppercase text-[14px] tracking-widest text-on-surface-variant">
+<svg fill="none" height="12" viewbox="0 0 12 12" width="12"><circle cx="6" cy="6" r="4" stroke="#A0522D" stroke-width="0.5"></circle></svg>
+                        Handmade
+                    </span>
+<span class="flex items-center gap-4 jost uppercase text-[14px] tracking-widest text-on-surface-variant">
+<svg fill="none" height="12" viewbox="0 0 12 12" width="12"><circle cx="6" cy="6" r="4" stroke="#A0522D" stroke-width="0.5"></circle></svg>
+                        Brass (recycled)
+                    </span>
+<span class="flex items-center gap-4 jost uppercase text-[14px] tracking-widest text-on-surface-variant">
+<svg fill="none" height="12" viewbox="0 0 12 12" width="12"><circle cx="6" cy="6" r="4" stroke="#A0522D" stroke-width="0.5"></circle></svg>
+                        Beeswax
+                    </span>
+</div>
+</div>
+<style>
+                @keyframes marquee {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+                .animate-marquee {
+                    animation: marquee 30s linear infinite;
+                }
+            </style>
+</section>
+<!-- TRANSPARENCY REPORT -->
+<section class="py-section-padding-v bg-background">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col items-center mb-16">
+<span class="font-label-ui text-label-ui text-secondary mb-4">FISCAL CLARITY</span>
+<h3 class="font-section-title text-section-title text-primary">Transparency Report</h3>
+</div>
+<div class="max-w-4xl mx-auto border border-outline-variant bg-surface-container-lowest p-12 relative">
+<div class="absolute inset-0 parchment-overlay bg-[#F5EAD0]"></div>
+<table class="w-full font-label-ui text-label-ui text-on-surface-variant relative z-10">
+<thead class="border-b border-outline-variant">
+<tr>
+<th class="text-left pb-6 font-medium">CATEGORY</th>
+<th class="text-right pb-6 font-medium">AVERAGE PERCENTAGE</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr>
+<td class="py-8">Materials Cost (Brass, Clay, Wax, Charcoal)</td>
+<td class="py-8 text-right text-primary font-bold">18%</td>
+</tr>
+<tr>
+<td class="py-8">Direct Artisan Payment (Labor &amp; Expertise)</td>
+<td class="py-8 text-right text-primary font-bold">65%</td>
+</tr>
+<tr>
+<td class="py-8">ALOHA Platform Fee (Operations &amp; Storage)</td>
+<td class="py-8 text-right text-primary font-bold">12%</td>
+</tr>
+<tr>
+<td class="py-8">Packaging &amp; Local Logistics</td>
+<td class="py-8 text-right text-primary font-bold">5%</td>
+</tr>
+</tbody>
+</table>
+<div class="mt-12 text-center relative z-10">
+<p class="dm-serif text-[24px] text-primary italic">"We show you this because you have the right to know."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FINAL CTA -->
+<section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Artisan family portrait" class="w-full h-full object-cover grayscale-[30%] contrast-[1.1]" src="https://lh3.googleusercontent.com/aida/ADBb0uh2Q8KxNBNG6SbkeCUVbrOBXBorJL8yUlqF2x1DGbKn5HixQ6vTO5sqcZu9pYZMauVE5JUQdwiRZkwjSH5X6PMkRCweeLb5PD0KmWaasHNa1CdtUJl-LWYOcj1hbE3IgAp63dlSkKQQd5DWzWCmk0imy2_KD3yh505V7EqIVw65U1o1emuOQY0VNu08F_63gvqH2A5SRnPrQg8T1x_sAcGqw4H18KzF71I98qBdPMxjmE7TVKaQk7vmNSy8"/>
+<div class="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 text-center px-6 max-w-4xl">
+<h2 class="cormorant italic font-light text-[72px] text-white leading-tight mb-12">
+                    Join the effort to keep this alive.
+                </h2>
+<div class="flex flex-wrap justify-center gap-6">
+<a href="collection.html" class="px-8 py-4 bg-transparent border border-white text-white font-button-text text-button-text hover:bg-white hover:text-primary transition-all duration-500 rounded-[2px] block text-center uppercase tracking-widest">
+                        SHOP THE COLLECTION
+                    </a>
+<a href="artisans.html" class="px-8 py-4 bg-transparent border border-white text-white font-button-text text-button-text hover:bg-white hover:text-primary transition-all duration-500 rounded-[2px] block text-center uppercase tracking-widest">
+                        SUPPORT AN ARTISAN
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container border-t border-outline-variant pt-24 pb-12 overflow-hidden relative w-full mt-auto text-left">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+            <div>
+                <h3 class="font-display-lg text-[48px] text-primary mb-6" style="font-family: 'Libre Caslon Text', serif; font-weight: 300;">Stay Connected.</h3>
+                <p class="font-body-main text-on-surface-variant mb-8 max-w-md">Subscribe to our journal for stories from the villages, new collection drops, and the history of Dhokra.</p>
+                <form class="flex border-b border-primary pb-2 max-w-md">
+                    <input type="email" placeholder="ENTER YOUR EMAIL" class="bg-transparent border-none outline-none flex-grow font-label-ui text-label-ui placeholder:text-on-surface-variant/50 focus:ring-0 px-0 text-primary">
+                    <button type="submit" class="font-button-text text-button-text text-primary hover:text-secondary transition-colors tracking-widest">SUBSCRIBE</button>
+                </form>
+            </div>
+            <div class="grid grid-cols-2 gap-8 md:justify-items-end">
+                <div class="flex flex-col gap-4 text-left md:text-right">
+                    <span class="font-label-ui text-label-ui text-secondary mb-2 tracking-widest">EXPLORE</span>
+                    <a href="story.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Our Story</a>
+                    <a href="artisans.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">The Artisans</a>
+                    <a href="collection.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Collection</a>
+                    <a href="impact.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Impact Report</a>
+                </div>
+                <div class="flex flex-col gap-4 text-left md:text-right">
+                    <span class="font-label-ui text-label-ui text-secondary mb-2 tracking-widest">SUPPORT</span>
+                    <a href="connect.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Contact Us</a>
+                    <a href="#" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Shipping & Returns</a>
+                    <a href="#" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Care Guide</a>
+                    <a href="#" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center justify-between border-t border-outline-variant pt-8">
+            <div class="flex items-center justify-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px] mb-8 md:mb-0">
+                <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-top" />
+            </div>
+            <p class="font-jost text-[12px] tracking-[0.1em] text-on-surface-variant/70 text-center md:text-left">
+                © 2024 ALOHA HERITAGE. PRESERVING THE DHOKRA LEGACY.<br/>
+                <span class="italic font-body-main text-[16px] tracking-normal">Made in Odisha. Present everywhere.</span>
+            </p>
+            <div class="flex gap-6 mt-8 md:mt-0 font-jost text-[12px] tracking-[0.1em] uppercase">
+                <a href="https://instagram.com/aloha.heritage" class="text-on-surface-variant hover:text-primary transition-colors">Instagram</a>
+                <a href="#" class="text-on-surface-variant hover:text-primary transition-colors">Journal</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const startCounting = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText.replace(/,/g, '');
+                        const inc = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc).toLocaleString();
+                            setTimeout(updateCount, 20);
+                        } else {
+                            counter.innerText = target.toLocaleString();
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(counter);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(startCounting, {
+            threshold: 1.0
+        });
+
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
+        
+        // Parallax effect for the wire and hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const wire = document.querySelector('.wire-svg');
+            if(wire) wire.style.transform = `translateY(${scrolled * 0.15}px)`;
+            
+            const header = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                header.classList.remove('bg-background/90', 'border-outline-variant/30');
+                header.classList.add('bg-[#F5EAD0]', 'shadow-sm', 'border-outline-variant/30');
+            } else {
+                header.classList.remove('bg-[#F5EAD0]', 'shadow-sm');
+                header.classList.add('bg-background/90', 'border-outline-variant/30');
+            }
+        });
+    </script>
+</body></html>

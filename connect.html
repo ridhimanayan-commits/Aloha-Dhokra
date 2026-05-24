@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ALOHA | Contact</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;700&amp;family=Libre+Caslon+Text:wght@400;700&amp;family=DM+Sans:wght@300;400&amp;family=Cormorant+Garamond:ital,wght@0,300;1,300&amp;family=DM+Serif+Text&amp;family=Jost:wght@300&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#702d00",
+                        "inverse-on-surface": "#fbf0d6",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#f2e7cd",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary": "#9b450d",
+                        "surface": "#fff8ef",
+                        "secondary-container": "#fe9256",
+                        "on-primary-fixed-variant": "#683c1c",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#36301f",
+                        "tertiary-fixed-dim": "#ffb68c",
+                        "surface-container-highest": "#ece2c8",
+                        "on-secondary-fixed": "#341100",
+                        "on-background": "#201b0b",
+                        "on-surface": "#201b0b",
+                        "on-primary-container": "#b67e59",
+                        "outline": "#84746b",
+                        "surface-bright": "#fff8ef",
+                        "secondary-fixed": "#ffdbcb",
+                        "surface-dim": "#e4d9c0",
+                        "primary": "#1d0900",
+                        "tertiary-fixed": "#ffdbc9",
+                        "on-surface-variant": "#51443c",
+                        "primary-fixed-dim": "#f9b98f",
+                        "outline-variant": "#d6c3b8",
+                        "on-tertiary-fixed-variant": "#753400",
+                        "surface-tint": "#835331",
+                        "primary-fixed": "#ffdcc6",
+                        "on-tertiary-fixed": "#321200",
+                        "surface-container": "#f8edd3",
+                        "error": "#ba1a1a",
+                        "background": "#fff8ef",
+                        "on-primary-fixed": "#311300",
+                        "surface-container-low": "#fef3d8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#d66f28",
+                        "on-secondary-fixed-variant": "#783100",
+                        "tertiary-container": "#3f1900",
+                        "secondary-fixed-dim": "#ffb691",
+                        "tertiary": "#1e0800",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#ece2c8",
+                        "primary-container": "#3d1a00",
+                        "inverse-primary": "#f9b98f",
+                        "divider-tan": "#D4B896"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "section-padding-v": "120px",
+                        "margin-desktop": "80px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-main": ["Literata"],
+                        "section-title": ["Libre Caslon Text"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "button-text": ["DM Sans"],
+                        "label-ui": ["DM Sans"],
+                        "serif-editorial": ["Cormorant Garamond"],
+                        "serif-heading": ["DM Serif Text"],
+                        "jost": ["Jost"]
+                    },
+                    "fontSize": {
+                        "body-main": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                        "section-title": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["44px", {"lineHeight": "52px", "letterSpacing": "0.03em", "fontWeight": "300"}],
+                        "display-lg": ["72px", {"lineHeight": "84px", "letterSpacing": "0.05em", "fontWeight": "300"}],
+                        "button-text": ["13px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "400"}],
+                        "label-ui": ["12px", {"lineHeight": "16px", "letterSpacing": "0.18em", "fontWeight": "300"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @keyframes gentle-rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-slow-rotate {
+            animation: gentle-rotate 20s linear infinite;
+        }
+        .floating-label-group {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .floating-label-group input, 
+        .floating-label-group textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #D4B896;
+            padding: 0.5rem 0;
+            color: #1d0900;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .floating-label-group input:focus, 
+        .floating-label-group textarea:focus {
+            border-bottom: 1px solid #3D1A00;
+        }
+        .floating-label-group label {
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #51443c;
+        }
+        .floating-label-group input:focus ~ label,
+        .floating-label-group input:not(:placeholder-shown) ~ label,
+        .floating-label-group textarea:focus ~ label,
+        .floating-label-group textarea:not(:placeholder-shown) ~ label {
+            top: -1.2rem;
+            font-size: 10px;
+            color: #3D1A00;
+        }
+        .signature-wire {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.2;
+        }
+        .parchment-bg {
+            background-color: #F5EAD0;
+        }
+    </style>
+</head>
+<body class="parchment-bg text-primary selection:bg-secondary selection:text-white">
+<!-- Signature Wire Background -->
+<svg class="signature-wire" fill="none" viewbox="0 0 1440 3000" xmlns="http://www.w3.org/2000/svg">
+<path d="M-100 200C200 400 500 100 800 600C1100 1100 1400 800 1600 1200M-200 1800C400 2200 900 1600 1200 2400C1500 3200 1800 2800 2000 3400" stroke="#A0522D" stroke-width="0.5"></path>
+</svg>
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex flex-col pt-8 pb-4 px-margin-mobile md:px-margin-desktop bg-background/90 backdrop-blur-sm transition-all duration-700 border-b border-outline-variant/30" id="main-nav">
+    <div class="max-w-container-max w-full mx-auto flex items-center justify-between">
+        <!-- Logo Left -->
+        <a href="index.html" class="flex-shrink-0 flex items-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px]">
+            <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-top transition-all duration-700" id="nav-logo" />
+        </a>
+        <!-- Links Right -->
+        <div class="hidden md:flex items-center gap-10 font-label-ui text-label-ui uppercase tracking-widest">
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="story.html">STORY</a>
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="index.html#process">CRAFT PROCESS</a>
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="artisans.html">ARTISANS</a>
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="collection.html">COLLECTION</a>
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="impact.html">IMPACT</a>
+            <a class="text-secondary border-b border-secondary transition-colors duration-300 interactive-link nav-link-text" href="connect.html">CONTACT</a>
+        </div>
+        <!-- Mobile Menu Placeholder -->
+        <div class="md:hidden">
+            <span class="material-symbols-outlined text-3xl text-on-surface nav-mobile-icon transition-colors duration-700">menu</span>
+        </div>
+    </div>
+</nav>
+<main class="relative z-10 max-w-[700px] mx-auto px-margin-mobile md:px-0 pt-[200px] pb-section-padding-v">
+<!-- Header Section -->
+<div class="flex flex-col items-center mb-16">
+<div class="w-[200px] mb-12">
+<img alt="Dhokra mandala motif" class="w-full h-full object-contain animate-slow-rotate" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
+</div>
+<h2 class="font-serif-editorial font-[200] text-[80px] leading-none text-primary text-center">Write to us.</h2>
+</div>
+<!-- Intro Text -->
+<p class="font-serif-heading text-[18px] text-center text-primary leading-relaxed mb-20 max-w-[600px] mx-auto">
+            "Whether you wish to commission a piece, partner with our artisans, book a workshop, or simply learn more — we welcome your words as warmly as a Dhokra mould welcomes its metal."
+        </p>
+<!-- Contact Reason Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-24">
+<div class="flex items-center justify-center h-20 border border-divider-tan cursor-pointer transition-colors duration-500 hover:bg-[#EEDDCC]">
+<span class="font-serif-editorial italic text-[20px] text-primary">Commission a piece</span>
+</div>
+<div class="flex items-center justify-center h-20 border border-divider-tan cursor-pointer transition-colors duration-500 hover:bg-[#EEDDCC]">
+<span class="font-serif-editorial italic text-[20px] text-primary">Visit an artisan village</span>
+</div>
+<div class="flex items-center justify-center h-20 border border-divider-tan cursor-pointer transition-colors duration-500 hover:bg-[#EEDDCC]">
+<span class="font-serif-editorial italic text-[20px] text-primary">Book a workshop</span>
+</div>
+<div class="flex items-center justify-center h-20 border border-divider-tan cursor-pointer transition-colors duration-500 hover:bg-[#EEDDCC]">
+<span class="font-serif-editorial italic text-[20px] text-primary">Press &amp; research enquiries</span>
+</div>
+</div>
+<!-- Contact Form -->
+<form class="space-y-12 mb-20">
+<div class="floating-label-group">
+<input id="name" placeholder=" " required="" type="text"/>
+<label for="name">Name</label>
+</div>
+<div class="floating-label-group">
+<input id="email" placeholder=" " required="" type="email"/>
+<label for="email">Email</label>
+</div>
+<div class="floating-label-group">
+<input id="village" placeholder=" " type="text"/>
+<label for="village">Village/City</label>
+</div>
+<div class="floating-label-group">
+<textarea id="message" placeholder=" " required="" rows="4"></textarea>
+<label for="message">Your message</label>
+</div>
+<button class="w-full py-5 border border-primary text-primary font-button-text text-button-text hover:bg-primary hover:text-background transition-all duration-300" type="submit">
+                SEND YOUR MESSAGE →
+            </button>
+</form>
+<!-- Social Details -->
+<div class="flex flex-col items-center gap-2 mb-32">
+<a class="font-jost text-[14px] text-on-surface-variant hover:text-secondary transition-colors" href="mailto:hello@alohaheritage.in">hello@alohaheritage.in</a>
+<a class="font-jost text-[14px] text-on-surface-variant hover:text-secondary transition-colors" href="https://instagram.com/aloha.heritage">@aloha.heritage</a>
+</div>
+<!-- Location Closing -->
+<div class="flex flex-col items-center">
+<p class="font-serif-editorial italic text-[32px] text-secondary text-center mb-8">Made in Odisha. Present everywhere.</p>
+<div class="w-[60px] opacity-40">
+<img alt="Dhokra turtle motif" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ujGsK-Q-B5lqDauuBr55n3ZVmMbBzXMebUH7DN3u0fMJiVsuLd_X6K-mShK_gOWtdMvIj935nPKIAcpa19q1X--rJFXwOhJRHIeQVSMGgn3Ey5oiVLkFlo_J5CODqtYZW4EXNclYfwMXtECSublarQFvEfRwoOEUNW_yPtjXVXCD5EboMYVuz9mtXBrtajxXcfUdMr24FwamJLwTCURihxBfE8A78EdqVprFJrU402CrahRL6MUGUE9lzQO"/>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container border-t border-outline-variant pt-24 pb-12 overflow-hidden relative w-full mt-auto text-left">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+            <div>
+                <h3 class="font-display-lg text-[48px] text-primary mb-6" style="font-family: 'Libre Caslon Text', serif; font-weight: 300;">Stay Connected.</h3>
+                <p class="font-body-main text-on-surface-variant mb-8 max-w-md">Subscribe to our journal for stories from the villages, new collection drops, and the history of Dhokra.</p>
+                <form class="flex border-b border-primary pb-2 max-w-md">
+                    <input type="email" placeholder="ENTER YOUR EMAIL" class="bg-transparent border-none outline-none flex-grow font-label-ui text-label-ui placeholder:text-on-surface-variant/50 focus:ring-0 px-0 text-primary">
+                    <button type="submit" class="font-button-text text-button-text text-primary hover:text-secondary transition-colors tracking-widest">SUBSCRIBE</button>
+                </form>
+            </div>
+            <div class="grid grid-cols-2 gap-8 md:justify-items-end">
+                <div class="flex flex-col gap-4 text-left md:text-right">
+                    <span class="font-label-ui text-label-ui text-secondary mb-2 tracking-widest">EXPLORE</span>
+                    <a href="story.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Our Story</a>
+                    <a href="artisans.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">The Artisans</a>
+                    <a href="collection.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Collection</a>
+                    <a href="impact.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Impact Report</a>
+                </div>
+                <div class="flex flex-col gap-4 text-left md:text-right">
+                    <span class="font-label-ui text-label-ui text-secondary mb-2 tracking-widest">SUPPORT</span>
+                    <a href="connect.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Contact Us</a>
+                    <a href="#" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Shipping & Returns</a>
+                    <a href="#" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Care Guide</a>
+                    <a href="#" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center justify-between border-t border-outline-variant pt-8">
+            <div class="flex items-center justify-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px] mb-8 md:mb-0">
+                <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-top" />
+            </div>
+            <p class="font-jost text-[12px] tracking-[0.1em] text-on-surface-variant/70 text-center md:text-left">
+                © 2024 ALOHA HERITAGE. PRESERVING THE DHOKRA LEGACY.<br/>
+                <span class="italic font-body-main text-[16px] tracking-normal">Made in Odisha. Present everywhere.</span>
+            </p>
+            <div class="flex gap-6 mt-8 md:mt-0 font-jost text-[12px] tracking-[0.1em] uppercase">
+                <a href="https://instagram.com/aloha.heritage" class="text-on-surface-variant hover:text-primary transition-colors">Instagram</a>
+                <a href="#" class="text-on-surface-variant hover:text-primary transition-colors">Journal</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+        // Micro-interaction for form button
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'MESSAGE CARRIED...';
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.innerText = 'SENT SUCCESSFULLY';
+                btn.classList.add('bg-primary', 'text-background');
+            }, 1000);
+        });
+
+        // Atmospheric parallax on signature wire
+        window.addEventListener('mousemove', (e) => {
+            const wire = document.querySelector('.signature-wire');
+            const x = (e.clientX / window.innerWidth - 0.5) * 15;
+            const y = (e.clientY / window.innerHeight - 0.5) * 15;
+            wire.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        // Navigation Transition on Scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                header.classList.remove('bg-background/90', 'border-outline-variant/30');
+                header.classList.add('bg-[#F5EAD0]', 'shadow-sm', 'border-outline-variant/30');
+            } else {
+                header.classList.remove('bg-[#F5EAD0]', 'shadow-sm');
+                header.classList.add('bg-background/90', 'border-outline-variant/30');
+            }
+        });
+    </script>
+</body></html>

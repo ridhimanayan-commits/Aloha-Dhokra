@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ALOHA | The Collection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:wght@300;400;500&amp;family=Literata:ital,wght@0,400;0,700;1,400&amp;family=Jost:wght@300;400;500&amp;family=DM+Serif+Text&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#fe9256",
+                        "on-tertiary-fixed": "#321200",
+                        "inverse-primary": "#f9b98f",
+                        "primary-container": "#3d1a00",
+                        "outline": "#84746b",
+                        "on-tertiary-container": "#d66f28",
+                        "secondary": "#9b450d",
+                        "primary-fixed": "#ffdcc6",
+                        "background": "#fff8ef",
+                        "secondary-fixed": "#ffdbcb",
+                        "on-primary-container": "#b67e59",
+                        "primary": "#1d0900",
+                        "on-tertiary-fixed-variant": "#753400",
+                        "on-primary-fixed": "#311300",
+                        "surface-variant": "#ece2c8",
+                        "surface-container-low": "#fef3d8",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#341100",
+                        "on-surface-variant": "#51443c",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#783100",
+                        "inverse-surface": "#36301f",
+                        "surface-container": "#f8edd3",
+                        "on-error": "#ffffff",
+                        "tertiary": "#1e0800",
+                        "on-background": "#201b0b",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb691",
+                        "tertiary-fixed-dim": "#ffb68c",
+                        "inverse-on-surface": "#fbf0d6",
+                        "primary-fixed-dim": "#f9b98f",
+                        "outline-variant": "#d6c3b8",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#702d00",
+                        "surface-container-highest": "#ece2c8",
+                        "surface-tint": "#835331",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fff8ef",
+                        "on-primary-fixed-variant": "#683c1c",
+                        "surface-dim": "#e4d9c0",
+                        "tertiary-container": "#3f1900",
+                        "surface": "#fff8ef",
+                        "on-surface": "#201b0b",
+                        "surface-container-high": "#f2e7cd",
+                        "tertiary-fixed": "#ffdbc9",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "32px",
+                        "section-padding-v": "120px",
+                        "margin-desktop": "80px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "section-title": ["Libre Caslon Text"],
+                        "label-ui": ["DM Sans"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "button-text": ["DM Sans"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "body-main": ["Literata"],
+                        "jost": ["Jost"],
+                        "dm-serif": ["DM Serif Text"]
+                    },
+                    "fontSize": {
+                        "section-title": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "label-ui": ["12px", {"lineHeight": "16px", "letterSpacing": "0.18em", "fontWeight": "300"}],
+                        "display-lg": ["72px", {"lineHeight": "84px", "letterSpacing": "0.05em", "fontWeight": "300"}],
+                        "button-text": ["13px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "400"}],
+                        "display-lg-mobile": ["44px", {"lineHeight": "52px", "letterSpacing": "0.03em", "fontWeight": "300"}],
+                        "body-main": ["18px", {"lineHeight": "32px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        .editorial-wire {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawWire 8s linear forwards;
+        }
+        @keyframes drawWire {
+            to { stroke-dashoffset: 0; }
+        }
+        .sepia-overlay {
+            filter: sepia(15%) contrast(1.1);
+        }
+        .product-card-badge {
+            mix-blend-mode: multiply;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body class="bg-background text-primary font-body-main selection:bg-secondary selection:text-white overflow-x-hidden">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex flex-col pt-8 pb-4 px-margin-mobile md:px-margin-desktop bg-background/90 backdrop-blur-sm transition-all duration-700 border-b border-outline-variant/30" id="main-nav">
+    <div class="max-w-container-max w-full mx-auto flex items-center justify-between">
+        <!-- Logo Left -->
+        <a href="index.html" class="flex-shrink-0 flex items-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px]">
+            <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-top transition-all duration-700" id="nav-logo" />
+        </a>
+        <!-- Links Right -->
+        <div class="hidden md:flex items-center gap-10 font-label-ui text-label-ui uppercase tracking-widest">
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="story.html">STORY</a>
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="index.html#process">CRAFT PROCESS</a>
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="artisans.html">ARTISANS</a>
+            <a class="text-secondary border-b border-secondary transition-colors duration-300 interactive-link nav-link-text" href="collection.html">COLLECTION</a>
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="impact.html">IMPACT</a>
+            <a class="text-on-surface hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="connect.html">CONTACT</a>
+        </div>
+        <!-- Mobile Menu Placeholder -->
+        <div class="md:hidden">
+            <span class="material-symbols-outlined text-3xl text-on-surface nav-mobile-icon transition-colors duration-700">menu</span>
+        </div>
+    </div>
+</nav>
+
+<main class="pt-[140px]">
+<section class="relative h-[80vh] md:h-[90vh] flex items-center overflow-hidden mb-section-padding-v">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center sepia-overlay scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTPQLTclkZ6uNf8W4agddWQSiHcUb2C5CzShA7xlXFtxgveCpqQYPYIK_0HScHfFpC0RR5y1EJe6LlYnK7Q_7PXJ4JIYJ_Qfpmgy6KQeOSsxrI354zcjMMVHFwYrzzJ3FS644_v5hi0OkBRnHEKclS0vqDEz6JZADD3E2jq4WRzR2CqkC7IHcW0z95AfZpKA2ZgrGydntnp2zgBhTYLZh7qfokC_Y36H3arXUOfJ1GwG3m-FnT1wxFTEXT54ABut48D5DhH3gPyhn2')"></div>
+</div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-center">
+<h1 class="font-display-lg text-[64px] md:text-[96px] text-primary-container mb-4" style="font-family: 'Libre Caslon Text', serif; font-weight: 200;">The Collection.</h1>
+<p class="italic text-[20px] md:text-[28px] text-secondary max-w-2xl mx-auto">Each piece is cast once. Named once. Yours once.</p>
+</div>
+
+<div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent"></div>
+</section>
+<section class="relative px-margin-mobile md:px-margin-desktop mb-16">
+<div class="border-t border-b border-outline-variant py-4 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-wrap justify-center gap-6 md:gap-10">
+<button class="font-jost text-[10px] tracking-[0.2em] text-on-surface-variant hover:text-secondary transition-colors">ALL</button>
+<button class="font-jost text-[10px] tracking-[0.2em] text-secondary border-b border-secondary pb-0.5">SCULPTURE</button>
+<button class="font-jost text-[10px] tracking-[0.2em] text-on-surface-variant hover:text-secondary transition-colors">JEWELLERY</button>
+<button class="font-jost text-[10px] tracking-[0.2em] text-on-surface-variant hover:text-secondary transition-colors">LAMPS</button>
+<button class="font-jost text-[10px] tracking-[0.2em] text-on-surface-variant hover:text-secondary transition-colors">RITUAL OBJECTS</button>
+<button class="font-jost text-[10px] tracking-[0.2em] text-on-surface-variant hover:text-secondary transition-colors">WALL ART</button>
+<button class="font-jost text-[10px] tracking-[0.2em] text-on-surface-variant hover:text-secondary transition-colors">CUSTOM</button>
+</div>
+<div class="font-jost text-[10px] tracking-[0.2em] text-on-surface-variant">
+                    SORT BY: <span class="text-primary font-medium cursor-pointer hover:text-secondary px-2">NEWEST</span> · <span class="cursor-pointer hover:text-secondary px-2">PRICE</span> · <span class="cursor-pointer hover:text-secondary px-2">ARTISAN</span>
+</div>
+</div>
+</section>
+<section class="px-margin-mobile md:px-margin-desktop mb-section-padding-v">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-24">
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-square bg-surface-container flex items-center justify-center p-8 transition-all duration-700 group-hover:border group-hover:border-outline-variant">
+<img alt="Fish" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03]" src="https://lh3.googleusercontent.com/aida/ADBb0uiwgtbLB74L56E5I3yOJK9UuDLo8_v2rCtGecnxQllzTRrxAnqdijQ_2ZkasoE6ipG-ltfHoF-9kb95dTX9F3eWS9Fgxz13YSqZCRQ1xcnVO6oUXzdJVosSRRLXP7dYrN4KOw4Xrkr25aUsypL4jzAHpr3BHU_1BwEaZAbCQyc1S8kpjO2zsPoF3Ss4MJ6pO8sVGzSyJizubnqwq-732GGuGLjxTS0g7HNHmB2lEs07Ewv6aZtzmPmtyp-9"/>
+<img alt="Authenticity Badge" class="absolute bottom-4 right-4 w-12 h-12 product-card-badge" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="font-jost text-[9px] tracking-[0.3em] text-primary-container bg-background/90 px-4 py-2 border border-primary-container">ADD TO COLLECTION</span>
+</div>
+</div>
+<div class="space-y-1">
+<p class="font-jost text-[9px] tracking-[0.2em] text-on-surface-variant">BY LAKHAN BAGLI</p>
+<h3 class="font-section-title italic text-[22px] leading-tight" style="font-family: 'Libre Caslon Text', serif;">The Bronze Minnow</h3>
+<p class="font-dm-serif text-[14px] text-on-surface-variant">Handcast brass · Tribal fish motif</p>
+<p class="font-jost text-[14px] font-light mt-2">₹ 3,800</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-square bg-surface-container flex items-center justify-center p-8 transition-all duration-700 group-hover:border group-hover:border-outline-variant">
+<img alt="Turtle" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03]" src="https://lh3.googleusercontent.com/aida/ADBb0ujGsK-Q-B5lqDauuBr55n3ZVmMbBzXMebUH7DN3u0fMJiVsuLd_X6K-mShK_gOWtdMvIj935nPKIAcpa19q1X--rJFXwOhJRHIeQVSMGgn3Ey5oiVLkFlo_J5CODqtYZW4EXNclYfwMXtECSublarQFvEfRwoOEUNW_yPtjXVXCD5EboMYVuz9mtXBrtajxXcfUdMr24FwamJLwTCURihxBfE8A78EdqVprFJrU402CrahRL6MUGUE9lzQO"/>
+<img alt="Authenticity Badge" class="absolute bottom-4 right-4 w-12 h-12 product-card-badge" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="font-jost text-[9px] tracking-[0.3em] text-primary-container bg-background/90 px-4 py-2 border border-primary-container">ADD TO COLLECTION</span>
+</div>
+</div>
+<div class="space-y-1">
+<p class="font-jost text-[9px] tracking-[0.2em] text-on-surface-variant">BY ARJUN DANG</p>
+<h3 class="font-section-title italic text-[22px] leading-tight" style="font-family: 'Libre Caslon Text', serif;">Grounded Wisdom</h3>
+<p class="font-dm-serif text-[14px] text-on-surface-variant">Lost-wax bronze · Tortoise totem</p>
+<p class="font-jost text-[14px] font-light mt-2">₹ 4,200</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-square bg-surface-container flex items-center justify-center p-8 transition-all duration-700 group-hover:border group-hover:border-outline-variant">
+<img alt="Armadillo" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03]" src="https://lh3.googleusercontent.com/aida/ADBb0uiKf3P0CAQiCcwuzdzvt9cfflu54pokQSzyYkYnnGpD2DxxXekbUCT7_EVb5n2Use_npYFV3-aeEiU5jkyjB06OmcQL0V-s577TQ4w2i4dAhrra_VTga_JgoT5YW0Vk9ZDbtf7X4aYlouBJlWrFh8lc4FKuAtjNYnsChShJRarXQSq_eY6f8wkIg-dycA7Q7Cii2WnGHaTP8DBTR5ntS663ddvBNU4zvaQ8qaIyMbB1H8PubYx-775zsfWI"/>
+<img alt="Authenticity Badge" class="absolute bottom-4 right-4 w-12 h-12 product-card-badge" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="font-jost text-[9px] tracking-[0.3em] text-primary-container bg-background/90 px-4 py-2 border border-primary-container">ADD TO COLLECTION</span>
+</div>
+</div>
+<div class="space-y-1">
+<p class="font-jost text-[9px] tracking-[0.2em] text-on-surface-variant">BY MANJU PANI</p>
+<h3 class="font-section-title italic text-[22px] leading-tight" style="font-family: 'Libre Caslon Text', serif;">The Shielded Wanderer</h3>
+<p class="font-dm-serif text-[14px] text-on-surface-variant">Textured brass wire · Pangolin figure</p>
+<p class="font-jost text-[14px] font-light mt-2">₹ 5,100</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-square bg-surface-container flex items-center justify-center p-8 transition-all duration-700 group-hover:border group-hover:border-outline-variant">
+<img alt="Elephants" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03]" src="https://lh3.googleusercontent.com/aida/ADBb0ughEHgC5f_K_exDEDp6iFhxISk9DmSFivSUK8fmq4jNoLoThEEB1yZ5qpUNyD3iB5ydpEbV-fIefKiqfGILyIiEDRhR7bsAqRXWcDuWOdfBayX52Qq3dHVy_chWwI38JZD4aHwdsfv_VSpfr0kUH9Rcz69-OI2p3oF8Xpl9mZ2B47kZ5Ya9OOXUXgLW2S1juSupU1BGutJzUYZI4TRsjRxTXDsX-nkD3UYIRtdGuiHU_Rbz8xGSGFmwyIk6"/>
+<img alt="Authenticity Badge" class="absolute bottom-4 right-4 w-12 h-12 product-card-badge" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="font-jost text-[9px] tracking-[0.3em] text-primary-container bg-background/90 px-4 py-2 border border-primary-container">ADD TO COLLECTION</span>
+</div>
+</div>
+<div class="space-y-1">
+<p class="font-jost text-[9px] tracking-[0.2em] text-on-surface-variant">BY LAKHAN BAGLI</p>
+<h3 class="font-section-title italic text-[22px] leading-tight" style="font-family: 'Libre Caslon Text', serif;">Sacred Kinship</h3>
+<p class="font-dm-serif text-[14px] text-on-surface-variant">Detailed bronze work · Pair of elephants</p>
+<p class="font-jost text-[14px] font-light mt-2">₹ 9,500</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-square bg-surface-container flex items-center justify-center p-8 transition-all duration-700 group-hover:border group-hover:border-outline-variant">
+<img class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03] sepia-overlay" data-alt="A detailed close-up of a Dhokra brass sun sculpture, handcrafted with intricate wire patterns and a radiant motif. The sculpture sits on a minimalist, parchment-colored surface, illuminated by warm, directional lighting that creates long, dramatic shadows. The aesthetic is editorial and high-fashion, with a rich palette of deep bronze and antique gold against a clean, off-white backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlAnGOWXg7XEXSE24bUeOuyrlSddjnNpCJyBLn8oMwf07KXl-FjL6tjGYtEiqka8FDD8LCfj9gtJV7i4w74VINA_pJXH3nToVIOOnknaB04ezsMRITbV1lDT-JCzA0xzo2uSS-Krs3cbtg9fFcCQb3yF9V2FP4Xc4C9hyvmR0LAQUzDFSo_53Njckq_gBz0EHzc5xfHvP-uChek6BKMV-xpu6OWY56-O50vQSLYh2pggzxW1xfvXgToVKWqM4zTF2t4cgtFnwR4oNI"/>
+<img alt="Authenticity Badge" class="absolute bottom-4 right-4 w-12 h-12 product-card-badge" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="font-jost text-[9px] tracking-[0.3em] text-primary-container bg-background/90 px-4 py-2 border border-primary-container">ADD TO COLLECTION</span>
+</div>
+</div>
+<div class="space-y-1">
+<p class="font-jost text-[9px] tracking-[0.2em] text-on-surface-variant">BY SOMNATH OJHA</p>
+<h3 class="font-section-title italic text-[22px] leading-tight" style="font-family: 'Libre Caslon Text', serif;">Solar Radiance</h3>
+<p class="font-dm-serif text-[14px] text-on-surface-variant">Concentric wire circles · Sun disk</p>
+<p class="font-jost text-[14px] font-light mt-2">₹ 6,400</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-square bg-surface-container flex items-center justify-center p-8 transition-all duration-700 group-hover:border group-hover:border-outline-variant">
+<img class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03] sepia-overlay" data-alt="A handcrafted Dhokra brass peacock sculpture, showing off its intricate wire-patterned tail. The piece is captured in a high-fashion editorial style, set against a warm clay-toned wall with soft, natural light coming from a nearby window. The mood is timeless and luxurious, emphasizing the tactile qualities of the metal and the craftsmanship involved in the tribal art form." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRrDZuiihaf9H3pZk4pBoPODVDU2tYpahsdd12rAtRGC9u9LJWReLphAjAW0Va1H2d3u0vwdrbd2Ve37-o7-3U7ixOU5pAk0SFSSJ9W2Dos2j4dNQRcVblBRg2YjnrNMtd1E3NBfLpFQDIW4Gj9UA8ZXFyXsPj2zRwlmDT1FEI_JKHIUkTPkQKfiJvyava4spDYV7aT7hOZd9MUkdBIz2IHwphngUIh6Kp41YUnqW9FkPvonI4rxrv82ZJfRp4voSrhsji-77bPSRN"/>
+<img alt="Authenticity Badge" class="absolute bottom-4 right-4 w-12 h-12 product-card-badge" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="font-jost text-[9px] tracking-[0.3em] text-primary-container bg-background/90 px-4 py-2 border border-primary-container">ADD TO COLLECTION</span>
+</div>
+</div>
+<div class="space-y-1">
+<p class="font-jost text-[9px] tracking-[0.2em] text-on-surface-variant">BY BINAY DHURUA</p>
+<h3 class="font-section-title italic text-[22px] leading-tight" style="font-family: 'Libre Caslon Text', serif;">The Forest Herald</h3>
+<p class="font-dm-serif text-[14px] text-on-surface-variant">Brass peacock · Ritual herald</p>
+<p class="font-jost text-[14px] font-light mt-2">₹ 7,200</p>
+</div>
+</div>
+</div>
+</section>
+<section class="relative mb-section-padding-v overflow-hidden">
+<svg class="absolute top-0 left-0 w-full h-full pointer-events-none z-0 opacity-20" fill="none" viewbox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg">
+<path class="editorial-wire" d="M-100 300C200 100 500 500 800 250C1100 0 1300 400 1600 300" stroke="#A0522D" stroke-width="1.5"></path>
+</svg>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-0 relative z-10">
+<div class="md:col-span-7 h-[600px] overflow-hidden">
+<img class="w-full h-full object-cover sepia-overlay" data-alt="A wide-angle editorial shot of a traditional Dhokra casting workshop in an Indian village. An artisan is meticulously working on a wax mold of an elephant, surrounded by raw materials like clay and metal scraps. The lighting is warm and golden, coming from the late afternoon sun, casting soft shadows across the earthy workshop floor. The entire scene exudes a sense of heritage, dedication, and the slow, deliberate pace of traditional craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZYy9cbnjBTDABxJeAtCr2B9EmiRyKINVz6NstZ44gNZ9YoOyrX1R18BFjYGDgxLSBy9dTeLh5F8vB3wMxmG_JP5Fb3inWnrwOE6CA0tAvS0-Lo6WZC5mHOgsJBIXqsPnIcovBd88q0ANPMhCGDSiqXkfoR17LuGYZIKpEJnWoSxPk17ao6jvg8Rt-SEvSgfTD-Ye8KLYYEvTrr9MmzmGF0l4_CFAVpilRL_g5X49pdNqdgcXAXIqMBUt2ThN0R4MNQ-NySOJ85RT5"/>
+</div>
+<div class="md:col-span-5 bg-surface-container flex flex-col justify-center p-12 md:p-24 space-y-8">
+<h2 class="font-jost text-[10px] tracking-[0.4em] text-secondary">THE ARTISAN'S MARK</h2>
+<p class="font-section-title text-[32px] md:text-[40px] leading-snug" style="font-family: 'Libre Caslon Text', serif; font-weight: 200;">
+                        This piece was cast by Lakhan Bagli in Sadeibareni. The elephant motif represents wisdom and strength. Cast time: 3 days.
+                    </p>
+<a class="inline-flex items-center gap-4 font-jost text-[12px] tracking-[0.2em] group border-b border-primary w-fit pb-2" href="#">
+                        EXPLORE THIS PIECE 
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<section class="bg-primary-container py-section-padding-v relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none mix-blend-overlay">
+<div class="grid grid-cols-4 md:grid-cols-6 gap-8 p-12">
+<img alt="" class="w-full aspect-square" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
+<img alt="" class="w-full aspect-square rotate-45" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
+<img alt="" class="w-full aspect-square -rotate-12" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
+<img alt="" class="w-full aspect-square" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
+<img alt="" class="w-full aspect-square rotate-90" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
+<img alt="" class="w-full aspect-square" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
+</div>
+</div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="md:w-1/2">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-[44px] text-background mb-8 leading-tight" style="font-family: 'Libre Caslon Text', serif;">Every ALOHA piece ships with a Digital Authenticity Card.</h2>
+<p class="font-body-main text-on-primary-container/80 text-[18px] mb-12">Bridging ancient craft with modern verification. Each object's soul is recorded, preserving the artisan's legacy for eternity.</p>
+</div>
+<div class="md:w-1/2 flex justify-center">
+<div class="w-[320px] aspect-[1.6/1] bg-surface-container border border-outline-variant p-6 relative overflow-hidden shadow-2xl">
+<div class="flex justify-between items-start mb-8">
+<div class="font-jost text-[9px] tracking-[0.2em]">ORIGIN: ODISHA</div>
+<div class="font-jost text-[9px] tracking-[0.2em]">№ 003 / 003</div>
+</div>
+<div class="space-y-4">
+<div class="border-b border-outline-variant pb-1">
+<span class="font-jost text-[8px] block text-on-surface-variant mb-1">ARTISAN</span>
+<span class="font-section-title italic text-[18px]">Lakhan Bagli</span>
+</div>
+<div class="border-b border-outline-variant pb-1">
+<span class="font-jost text-[8px] block text-on-surface-variant mb-1">VILLAGE</span>
+<span class="font-section-title italic text-[18px]">Sadeibareni</span>
+</div>
+</div>
+<img alt="" class="absolute -bottom-8 -right-8 w-32 h-32 opacity-10" src="https://lh3.googleusercontent.com/aida/ADBb0uj3RmpnyqtKIlwpc1Pj45KidBjT-NW_P4xzPJXw0ZA_Lf3PCOMbEhNl98390IgIB6y-YM2J6kN8CzQL5lpHdY5MfXzgCWVHvL9iK2cS_I3AwhxzHLqPu3ZU5VreTuD7BpoNpTCJW8dn9wv9otJ3NeJGto6VQr-em6osrYOq5GQnNpyY0jUlQwFlkYyjFBENxPfyN0T7thkXBq4Aur-vZ91TgazwbtmPK2WbG3fQZb_3WPUmUZPxQAtm6zA6"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-padding-v px-margin-mobile md:px-margin-desktop text-center relative">
+<h2 class="font-display-lg italic text-[48px] md:text-[64px] mb-16" style="font-family: 'Libre Caslon Text', serif;">Commission a piece.</h2>
+<form class="max-w-2xl mx-auto space-y-12 text-left">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-1">
+<label class="font-jost text-[10px] tracking-[0.2em] text-on-surface-variant uppercase">Name</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-primary p-0 py-2 focus:ring-0 focus:border-secondary placeholder:text-outline-variant" placeholder="Full name" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-jost text-[10px] tracking-[0.2em] text-on-surface-variant uppercase">Vision</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-primary p-0 py-2 focus:ring-0 focus:border-secondary placeholder:text-outline-variant" placeholder="Desired motif/animal" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-jost text-[10px] tracking-[0.2em] text-on-surface-variant uppercase">Size</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-primary p-0 py-2 focus:ring-0 focus:border-secondary placeholder:text-outline-variant" placeholder="Approx. dimensions" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-jost text-[10px] tracking-[0.2em] text-on-surface-variant uppercase">Timeline</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-primary p-0 py-2 focus:ring-0 focus:border-secondary placeholder:text-outline-variant" placeholder="When do you need it?" type="text"/>
+</div>
+</div>
+<div class="flex flex-col items-center">
+<button class="inline-flex items-center gap-4 font-jost text-[14px] tracking-[0.3em] group border-b border-primary w-fit pb-2 mt-8" type="submit">
+                        SUBMIT YOUR VISION 
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
+</button>
+</div>
+</form>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container border-t border-outline-variant pt-24 pb-12 overflow-hidden relative w-full mt-auto text-left">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+            <div>
+                <h3 class="font-display-lg text-[48px] text-primary mb-6" style="font-family: 'Libre Caslon Text', serif; font-weight: 300;">Stay Connected.</h3>
+                <p class="font-body-main text-on-surface-variant mb-8 max-w-md">Subscribe to our journal for stories from the villages, new collection drops, and the history of Dhokra.</p>
+                <form class="flex border-b border-primary pb-2 max-w-md">
+                    <input type="email" placeholder="ENTER YOUR EMAIL" class="bg-transparent border-none outline-none flex-grow font-label-ui text-label-ui placeholder:text-on-surface-variant/50 focus:ring-0 px-0 text-primary">
+                    <button type="submit" class="font-button-text text-button-text text-primary hover:text-secondary transition-colors tracking-widest">SUBSCRIBE</button>
+                </form>
+            </div>
+            <div class="grid grid-cols-2 gap-8 md:justify-items-end">
+                <div class="flex flex-col gap-4 text-left md:text-right">
+                    <span class="font-label-ui text-label-ui text-secondary mb-2 tracking-widest">EXPLORE</span>
+                    <a href="story.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Our Story</a>
+                    <a href="artisans.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">The Artisans</a>
+                    <a href="collection.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Collection</a>
+                    <a href="impact.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Impact Report</a>
+                </div>
+                <div class="flex flex-col gap-4 text-left md:text-right">
+                    <span class="font-label-ui text-label-ui text-secondary mb-2 tracking-widest">SUPPORT</span>
+                    <a href="connect.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Contact Us</a>
+                    <a href="#" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Shipping & Returns</a>
+                    <a href="#" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Care Guide</a>
+                    <a href="#" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center justify-between border-t border-outline-variant pt-8">
+            <div class="flex items-center justify-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px] mb-8 md:mb-0">
+                <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-top" />
+            </div>
+            <p class="font-jost text-[12px] tracking-[0.1em] text-on-surface-variant/70 text-center md:text-left">
+                © 2024 ALOHA HERITAGE. PRESERVING THE DHOKRA LEGACY.<br/>
+                <span class="italic font-body-main text-[16px] tracking-normal">Made in Odisha. Present everywhere.</span>
+            </p>
+            <div class="flex gap-6 mt-8 md:mt-0 font-jost text-[12px] tracking-[0.1em] uppercase">
+                <a href="https://instagram.com/aloha.heritage" class="text-on-surface-variant hover:text-primary transition-colors">Instagram</a>
+                <a href="#" class="text-on-surface-variant hover:text-primary transition-colors">Journal</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+        // Smooth reveal on scroll for editorial wires
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-draw');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.editorial-wire').forEach(path => {
+            observer.observe(path);
+        });
+
+        // Simple header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                header.classList.remove('bg-background/90', 'border-outline-variant/30');
+                header.classList.add('bg-[#F5EAD0]', 'shadow-sm', 'border-outline-variant/30');
+            } else {
+                header.classList.remove('bg-[#F5EAD0]', 'shadow-sm');
+                header.classList.add('bg-background/90', 'border-outline-variant/30');
+            }
+        });
+    </script>
+</body></html>

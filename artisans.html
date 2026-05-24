@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ARTISANS | ALOHA HERITAGE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;1,400&amp;family=DM+Sans:wght@300;400;500&amp;family=Literata:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#fff8ef",
+                    "on-tertiary-fixed": "#321200",
+                    "surface-container-high": "#f2e7cd",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb68c",
+                    "on-secondary-fixed-variant": "#783100",
+                    "surface-variant": "#ece2c8",
+                    "surface-dim": "#e4d9c0",
+                    "on-primary-container": "#b67e59",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#3f1900",
+                    "on-primary-fixed-variant": "#683c1c",
+                    "tertiary-fixed": "#ffdbc9",
+                    "on-secondary-container": "#702d00",
+                    "on-surface-variant": "#51443c",
+                    "secondary": "#9b450d",
+                    "primary": "#1d0900",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#36301f",
+                    "tertiary": "#1e0800",
+                    "outline-variant": "#d6c3b8",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#311300",
+                    "primary-container": "#3d1a00",
+                    "inverse-primary": "#f9b98f",
+                    "surface-bright": "#fff8ef",
+                    "secondary-fixed": "#ffdbcb",
+                    "primary-fixed-dim": "#f9b98f",
+                    "on-error": "#ffffff",
+                    "surface-container": "#f8edd3",
+                    "on-tertiary-container": "#d66f28",
+                    "surface": "#fff8ef",
+                    "on-background": "#201b0b",
+                    "surface-container-highest": "#ece2c8",
+                    "on-surface": "#201b0b",
+                    "surface-container-low": "#fef3d8",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#835331",
+                    "secondary-container": "#fe9256",
+                    "primary-fixed": "#ffdcc6",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#ffb691",
+                    "on-secondary-fixed": "#341100",
+                    "outline": "#84746b",
+                    "inverse-on-surface": "#fbf0d6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#753400"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "container-max": "1440px",
+                    "gutter": "32px",
+                    "margin-mobile": "20px",
+                    "section-padding-v": "120px"
+            },
+            "fontFamily": {
+                    "button-text": ["DM Sans"],
+                    "section-title": ["Libre Caslon Text"],
+                    "display-lg": ["Libre Caslon Text"],
+                    "label-ui": ["DM Sans"],
+                    "body-main": ["Literata"],
+                    "display-lg-mobile": ["Libre Caslon Text"]
+            },
+            "fontSize": {
+                    "button-text": ["13px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "400"}],
+                    "section-title": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "84px", "letterSpacing": "0.05em", "fontWeight": "300"}],
+                    "label-ui": ["12px", {"lineHeight": "16px", "letterSpacing": "0.18em", "fontWeight": "300"}],
+                    "body-main": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["44px", {"lineHeight": "52px", "letterSpacing": "0.03em", "fontWeight": "300"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        .signature-wire {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawWire 10s linear forwards infinite;
+            filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.05));
+        }
+        @keyframes drawWire {
+            to { stroke-dashoffset: 0; }
+        }
+        .sepia-overlay {
+            filter: sepia(15%) contrast(110%);
+        }
+        .floating-motif {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .audio-wave-bar {
+            animation: wave 1.2s ease-in-out infinite alternate;
+        }
+        @keyframes wave {
+            from { height: 10%; }
+            to { height: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-background font-body-main text-on-background selection:bg-secondary-fixed selection:text-on-secondary-fixed overflow-x-hidden">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex flex-col pt-8 pb-4 px-margin-mobile md:px-margin-desktop bg-transparent transition-all duration-700 border-b border-outline-variant/0" id="main-nav">
+    <div class="max-w-container-max w-full mx-auto flex items-center justify-between">
+        <!-- Logo Left -->
+        <a href="index.html" class="flex-shrink-0 flex items-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px]">
+            <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-bottom transition-all duration-700" id="nav-logo" />
+        </a>
+        <!-- Links Right -->
+        <div class="hidden md:flex items-center gap-10 font-label-ui text-label-ui uppercase tracking-widest">
+            <a class="text-[#FDF6EC] hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="story.html">STORY</a>
+            <a class="text-[#FDF6EC] hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="index.html#process">CRAFT PROCESS</a>
+            <a class="text-secondary border-b border-secondary transition-colors duration-300 interactive-link nav-link-text" href="artisans.html">ARTISANS</a>
+            <a class="text-[#FDF6EC] hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="collection.html">COLLECTION</a>
+            <a class="text-[#FDF6EC] hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="impact.html">IMPACT</a>
+            <a class="text-[#FDF6EC] hover:text-secondary transition-colors duration-300 interactive-link nav-link-text" href="connect.html">CONTACT</a>
+        </div>
+        <!-- Mobile Menu Placeholder -->
+        <div class="md:hidden">
+            <span class="material-symbols-outlined text-3xl text-[#FDF6EC] nav-mobile-icon transition-colors duration-700">menu</span>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Hero -->
+<header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center sepia-overlay scale-105 transition-transform duration-[10s] hover:scale-100" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHvLc4OMYecMB8XP1vE7FglA0mWVaXiQKWyGrDrP693-ary5JEZTpoeKgDH6tGKC_y0wXrciy9Glp4umOwEiuzlEPUS447akPP3OK9K9Olm8S1dzF2Y6ng8ilq0RIx5wROTjI4nywBg6q3s61MKug-2xY93eVxhi3Rg4QvHRoe-662dOE2Wn7hteoRyh1IlicfDSnehMgYDdWOvXxQMiKbze5or0GMdBlo3lHYQn8hpsSyn9-9qdlfI1uhoxeKh2REGkof2Pc_47-Y')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
+<div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-black/70 to-transparent pointer-events-none"></div>
+<div class="relative z-10 text-center px-margin-mobile">
+<p class="font-label-ui text-[11px] tracking-[0.3em] uppercase text-surface-container-low mb-6 opacity-0 animate-[fadeIn_1s_ease-out_forwards]">THE MAKERS</p>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-surface-bright max-w-4xl opacity-0 animate-[fadeIn_1.5s_ease-out_0.5s_forwards]">Their hands remember what history forgot.</h1>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-50">
+<span class="font-label-ui text-[10px] uppercase tracking-widest text-surface-bright">SCROLL</span>
+<div class="w-px h-16 bg-surface-bright/30 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1/2 bg-surface-bright animate-[scrollIndicator_2s_infinite]"></div>
+</div>
+</div>
+</header>
+<!-- Intro Editorial -->
+<section class="relative py-section-padding-v px-margin-mobile flex flex-col items-center">
+<!-- SVG Signature Wire Background -->
+<svg class="absolute top-0 left-0 w-full h-[300%] pointer-events-none z-0 overflow-visible" fill="none" viewbox="0 0 1440 3000" xmlns="http://www.w3.org/2000/svg">
+<path class="signature-wire" d="M1440 100C1200 200 900 0 600 300C300 600 1200 800 1400 1200C1600 1600 200 1800 0 2200C-200 2600 1200 2800 1440 3100" stroke="#A0522D" stroke-width="1.5"></path>
+</svg>
+<div class="relative max-w-[600px] text-center z-10">
+<img alt="" aria-hidden="true" class="absolute -left-24 top-0 w-32 h-32 opacity-60 floating-motif" src="https://lh3.googleusercontent.com/aida/ADBb0ujGsK-Q-B5lqDauuBr55n3ZVmMbBzXMebUH7DN3u0fMJiVsuLd_X6K-mShK_gOWtdMvIj935nPKIAcpa19q1X--rJFXwOhJRHIeQVSMGgn3Ey5oiVLkFlo_J5CODqtYZW4EXNclYfwMXtECSublarQFvEfRwoOEUNW_yPtjXVXCD5EboMYVuz9mtXBrtajxXcfUdMr24FwamJLwTCURihxBfE8A78EdqVprFJrU402CrahRL6MUGUE9lzQO"/>
+<p class="font-body-main text-body-main text-on-surface leading-relaxed italic md:not-italic">
+                ALOHA exists because they do. Every piece in our collection carries the name of the artisan who made it — not as a label, but as a credit. A signature. A right.
+            </p>
+<div class="mt-12 w-24 h-px bg-outline-variant mx-auto"></div>
+</div>
+</section>
+<!-- Artisan Profiles -->
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop space-y-section-padding-v">
+<!-- Profile 1 -->
+<div class="grid md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover sepia-overlay transition-transform duration-700 hover:scale-105" data-alt="A portrait of Lakhan Bagli, a veteran Dhokra artisan, in his natural workshop environment in Sadeibareni village. He is surrounded by his family and various finished bronze metalwork pieces. The lighting is warm and earthy, creating a sophisticated editorial feel with film-like grain and deep contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcGKKaxp6pxRJSqYLInE2Xarmrm-tVTQ4tbjTElYqYLVRD6q_UZ6NMHuMgbHkX-rccBko7MuO8vxVyEI2-HZWQ-L-5eqPEIkLP6eiYytMrQU0XiafuaTDFMbHNUPCoXlxe2wlZwxodWxpJ8blfxrlb1f4J1WjkbAQRPwSFxwKiPy5WQcY7jsmpqDThfvdtyW0Do97RnFw7FMWdwjMA2xniG9xnJQ8ppWoYMurio0qhIz67Mq6D1ydV3JJxcBf_t_-ASoh8GmmdKs4X"/>
+</div>
+<!-- Motif Node -->
+<div class="absolute -bottom-8 -right-8 w-24 h-24 bg-surface-bright border border-outline-variant p-4 z-20">
+<img alt="" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uiwgtbLB74L56E5I3yOJK9UuDLo8_v2rCtGecnxQllzTRrxAnqdijQ_2ZkasoE6ipG-ltfHoF-9kb95dTX9F3eWS9Fgxz13YSqZCRQ1xcnVO6oUXzdJVosSRRLXP7dYrN4KOw4Xrkr25aUsypL4jzAHpr3BHU_1BwEaZAbCQyc1S8kpjO2zsPoF3Ss4MJ6pO8sVGzSyJizubnqwq-732GGuGLjxTS0g7HNHmB2lEs07Ewv6aZtzmPmtyp-9"/>
+</div>
+</div>
+<div class="md:col-span-4 md:col-start-9 space-y-6">
+<div>
+<span class="font-label-ui text-[10px] text-secondary uppercase tracking-[0.3em]">Sadeibareni, Dhenkanal</span>
+<h3 class="font-section-title text-[36px] text-primary mt-2">Lakhan Bagli</h3>
+<p class="font-label-ui text-label-ui text-on-surface-variant opacity-70">38 years of practice</p>
+</div>
+<blockquote class="font-body-main text-[24px] text-on-tertiary-container italic leading-tight border-l-2 border-secondary pl-6 py-2">
+                    "The wax knows the path. I only guide the thread."
+                </blockquote>
+<p class="font-body-main text-on-surface-variant leading-relaxed">
+                    Lakhan is a master of the lost-wax casting technique, a process that requires absolute stillness of the mind. He describes his work not as shaping metal, but as uncovering the spirit already residing within the wax.
+                </p>
+</div>
+</div>
+<!-- Profile 2 -->
+<div class="grid md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-4 space-y-6 order-2 md:order-1">
+<div>
+<span class="font-label-ui text-[10px] text-secondary uppercase tracking-[0.3em]">The Craft Detail</span>
+<h3 class="font-section-title text-[36px] text-primary mt-2">The Architecture of Wax</h3>
+</div>
+<p class="font-body-main text-on-surface-variant leading-relaxed">
+                    Dhokra is a non-ferrous metal casting using the lost-wax technique. This sort of metal casting has been used in India for over 4,000 years and is still used. One of the earliest known lost wax artifacts is the dancing girl of Mohenjo-daro.
+                </p>
+<div class="pt-4">
+<a class="inline-flex items-center gap-4 group" href="#">
+<span class="font-button-text text-button-text text-primary uppercase border-b border-primary pb-1">Watch Process</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-7 md:col-start-6 relative order-1 md:order-2">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover sepia-overlay transition-transform duration-700 hover:scale-105" data-alt="A macro close-up of an artisan's weathered hands delicately wrapping fine beeswax threads around a clay core in a traditional Dhokra casting process. The lighting is dramatic and focused, highlighting the intricate texture of the wax and the skin. The overall aesthetic is one of meticulous craftsmanship and high-end luxury editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDllB_hiV34tiIpOJJjvbFQuN_6UCTFy2mCPM5ncnomjdQobFPTngT1A_yvNk-qUAY7e0nnpuu3-FBY8T9pnqYRD5V_UGKqy9ILiu_Yadj-xrhSbrrThA2NZEjDUULwTsFukycIyP8uDXtbN1CGFL0WgFjFTCvoXaUqvOljEkco85WYs1q37_gLkiowiWyyM7v6ogiIxlhKadc6DYoodGRmpSSRNGqYv5_rRRC5DtYiNoEWq339ipSRcuLyvzd8uSqJdiCgn1nz9dUm"/>
+</div>
+<!-- Motif Node -->
+<div class="absolute -top-8 -left-8 w-24 h-24 bg-surface-bright border border-outline-variant p-4 z-20">
+<img alt="" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ujGsK-Q-B5lqDauuBr55n3ZVmMbBzXMebUH7DN3u0fMJiVsuLd_X6K-mShK_gOWtdMvIj935nPKIAcpa19q1X--rJFXwOhJRHIeQVSMGgn3Ey5oiVLkFlo_J5CODqtYZW4EXNclYfwMXtECSublarQFvEfRwoOEUNW_yPtjXVXCD5EboMYVuz9mtXBrtajxXcfUdMr24FwamJLwTCURihxBfE8A78EdqVprFJrU402CrahRL6MUGUE9lzQO"/>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Craft Villages Map -->
+<section class="py-section-padding-v mt-section-padding-v bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-gutter items-center">
+<div class="order-2 md:order-1">
+<div class="relative inline-block w-full max-w-md mx-auto aspect-square bg-surface-container-high rounded-full flex items-center justify-center p-8 border border-outline-variant">
+<!-- Map placeholder since the base64 image was truncated -->
+<div class="text-center">
+    <span class="material-symbols-outlined text-6xl text-secondary mb-4">map</span>
+    <p class="font-label-ui text-secondary tracking-widest uppercase">Map of Odisha Clusters</p>
+    <p class="text-xs text-on-surface-variant mt-2 opacity-50">(Replace with your map image)</p>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2 space-y-8">
+<h2 class="font-section-title text-[36px] md:text-[48px] text-primary leading-tight">The Clusters</h2>
+<p class="font-body-main text-on-surface-variant leading-relaxed">
+    Our artisans are primarily located in the traditional craft villages of Odisha. Each cluster has its own unique interpretation of the Dhokra tradition, shaped by generations of practice and local lore.
+</p>
+<ul class="space-y-4 font-body-main text-on-surface">
+    <li class="flex items-center gap-4">
+        <span class="w-2 h-2 rounded-full bg-secondary"></span>
+        Sadeibareni, Dhenkanal
+    </li>
+    <li class="flex items-center gap-4">
+        <span class="w-2 h-2 rounded-full bg-secondary"></span>
+        Kuliana, Mayurbhanj
+    </li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-surface-container border-t border-outline-variant pt-24 pb-12 overflow-hidden relative w-full mt-auto text-left">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+            <div>
+                <h3 class="font-display-lg text-[48px] text-primary mb-6" style="font-family: 'Libre Caslon Text', serif; font-weight: 300;">Stay Connected.</h3>
+                <p class="font-body-main text-on-surface-variant mb-8 max-w-md">Subscribe to our journal for stories from the villages, new collection drops, and the history of Dhokra.</p>
+                <form class="flex border-b border-primary pb-2 max-w-md">
+                    <input type="email" placeholder="ENTER YOUR EMAIL" class="bg-transparent border-none outline-none flex-grow font-label-ui text-label-ui placeholder:text-on-surface-variant/50 focus:ring-0 px-0 text-primary">
+                    <button type="submit" class="font-button-text text-button-text text-primary hover:text-secondary transition-colors tracking-widest">SUBSCRIBE</button>
+                </form>
+            </div>
+            <div class="grid grid-cols-2 gap-8 md:justify-items-end">
+                <div class="flex flex-col gap-4 text-left md:text-right">
+                    <span class="font-label-ui text-label-ui text-secondary mb-2 tracking-widest">EXPLORE</span>
+                    <a href="story.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Our Story</a>
+                    <a href="artisans.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">The Artisans</a>
+                    <a href="collection.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Collection</a>
+                    <a href="impact.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Impact Report</a>
+                </div>
+                <div class="flex flex-col gap-4 text-left md:text-right">
+                    <span class="font-label-ui text-label-ui text-secondary mb-2 tracking-widest">SUPPORT</span>
+                    <a href="connect.html" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Contact Us</a>
+                    <a href="#" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Shipping & Returns</a>
+                    <a href="#" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Care Guide</a>
+                    <a href="#" class="font-jost text-[14px] text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center justify-between border-t border-outline-variant pt-8">
+            <div class="flex items-center justify-center h-8 md:h-12 overflow-hidden relative w-[120px] md:w-[160px] mb-8 md:mb-0">
+                <img src="logo-sheet.png" alt="ALOHA" class="w-full h-[200%] object-cover object-top" />
+            </div>
+            <p class="font-jost text-[12px] tracking-[0.1em] text-on-surface-variant/70 text-center md:text-left">
+                © 2024 ALOHA HERITAGE. PRESERVING THE DHOKRA LEGACY.<br/>
+                <span class="italic font-body-main text-[16px] tracking-normal">Made in Odisha. Present everywhere.</span>
+            </p>
+            <div class="flex gap-6 mt-8 md:mt-0 font-jost text-[12px] tracking-[0.1em] uppercase">
+                <a href="https://instagram.com/aloha.heritage" class="text-on-surface-variant hover:text-primary transition-colors">Instagram</a>
+                <a href="#" class="text-on-surface-variant hover:text-primary transition-colors">Journal</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    // Navigation Transition on Scroll
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+        const logo = document.getElementById('nav-logo');
+        const links = document.querySelectorAll('.nav-link-text');
+        const mobileIcon = document.querySelector('.nav-mobile-icon');
+
+        if (window.scrollY > 50) {
+            nav.style.backgroundColor = '#F5EAD0';
+            nav.style.borderBottomColor = 'rgba(132, 116, 107, 0.3)';
+            nav.classList.add('shadow-sm');
+            if(logo) {
+                logo.classList.remove('object-bottom');
+                logo.classList.add('object-top');
+            }
+            links.forEach(link => {
+                if(!link.classList.contains('text-secondary')) {
+                    link.classList.remove('text-[#FDF6EC]');
+                    link.classList.add('text-on-surface');
+                }
+            });
+            if(mobileIcon) {
+                mobileIcon.classList.remove('text-[#FDF6EC]');
+                mobileIcon.classList.add('text-on-surface');
+            }
+        } else {
+            nav.style.backgroundColor = 'transparent';
+            nav.style.borderBottomColor = 'rgba(132, 116, 107, 0)';
+            nav.classList.remove('shadow-sm');
+            if(logo) {
+                logo.classList.add('object-bottom');
+                logo.classList.remove('object-top');
+            }
+            links.forEach(link => {
+                if(!link.classList.contains('text-secondary')) {
+                    link.classList.remove('text-on-surface');
+                    link.classList.add('text-[#FDF6EC]');
+                }
+            });
+            if(mobileIcon) {
+                mobileIcon.classList.add('text-[#FDF6EC]');
+                mobileIcon.classList.remove('text-on-surface');
+            }
+        }
+    });
+</script>
+</body>
+</html>
